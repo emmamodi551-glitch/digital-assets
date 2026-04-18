@@ -194,6 +194,117 @@
         </div>
     </div>
 </section>
+    <section id="faq-section" style="background-color: #050505; padding: 40px 20px; font-family: 'Inter', sans-serif; color: #ffffff;">
+    <div style="max-width: 600px; margin: 0 auto;">
+        
+        <h2 style="text-transform: uppercase; letter-spacing: 2px; font-size: 1.5rem; margin-bottom: 30px; border-left: 4px solid #00ff00; padding-left: 15px;">
+            NUEL <span style="color: #00ff00;">DIGITAL</span>
+        </h2>
+
+        <div class="faq-container">
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span><span style="color: #00ff00; margin-right: 8px;">></span> What exactly does the 'House of Brands' system include?</span>
+                    <span class="arrow" style="color: #00ff00;">▼</span>
+                </div>
+                <div class="faq-answer">
+                    It includes a unified digital structure for Nuel Property Services, Nuel Digital Assets, Nuel Wear, and the Shared Leadership Circle, ensuring all brands share a cohesive tech ecosystem.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span><span style="color: #00ff00; margin-right: 8px;">></span> How long does it take to set up my digital ecosystem?</span>
+                    <span class="arrow" style="color: #00ff00;">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Initial deployment typically takes 14-21 days, depending on the complexity of your custom Python and MacroDroid automations.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span><span style="color: #00ff00; margin-right: 8px;">></span> Can I upgrade my plan later?</span>
+                    <span class="arrow" style="color: #00ff00;">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, you can scale your assets and automation tiers as your business operations grow.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span><span style="color: #00ff00; margin-right: 8px;">></span> Do I own the content and assets you create?</span>
+                    <span class="arrow" style="color: #00ff00;">▼</span>
+                </div>
+                <div class="faq-answer">
+                    100%. All digital assets, code, and configurations are transferred to your ownership upon project completion.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .faq-item {
+        background-color: #111111;
+        border: 1px solid #333; /* Rugged border */
+        border-radius: 4px;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+        border-color: #00ff00; /* Glow effect on hover */
+        background-color: #161616;
+    }
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+    .arrow {
+        font-size: 0.7rem;
+        transition: transform 0.3s ease;
+    }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, margin-top 0.3s ease;
+        color: #cccccc;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    .faq-item.active {
+        border-color: #00ff00;
+    }
+    .faq-item.active .faq-answer {
+        max-height: 200px;
+        margin-top: 15px;
+        border-top: 1px solid #222;
+        padding-top: 10px;
+    }
+    .faq-item.active .arrow {
+        transform: rotate(180deg);
+    }
+</style>
+
+<script>
+    function toggleFaq(element) {
+        element.classList.toggle('active');
+    }
+</script>
+    
     
     <section id="booking" class="py-24 bg-gray-900 px-4">
         <div class="max-w-4xl mx-auto text-center border-t border-gray-800 pt-20">
