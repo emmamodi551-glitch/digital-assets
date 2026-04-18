@@ -9,6 +9,8 @@
         .premium-gradient {
             background: linear-gradient(90deg, #ff4d4d 0%, #a64dff 50%, #4d79ff 100%);
         }
+        /* Custom scroll behavior for the navigation links */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans">
@@ -21,7 +23,7 @@
             <div class="hidden md:flex space-x-8 text-gray-300">
                 <a href="#plans" class="hover:text-white">Plans</a>
                 <a href="#features" class="hover:text-white">Features</a>
-                <a href="#partnerships" class="hover:text-white">Partnerships</a>
+                <a href="#partnerships" class="hover:text-white font-bold text-green-400">Partnerships</a>
                 <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="hover:text-white">Booking</a>
             </div>
             <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2 rounded-full transition duration-300">Book A Call</a>
@@ -35,7 +37,7 @@
                 We Build and Manage Your Entire <span class="text-indigo-400">Digital Ecosystem</span>.
             </h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
-                A Premium "House of Brands" System for Businesses & Creators.
+                A Premium "House of Brands" System for Businesses & Creators. We focus on the tech so you can focus on the business.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#plans" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg px-10 py-4 rounded-xl transition duration-300">Explore Plans</a>
@@ -61,61 +63,80 @@
                 <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
                     <div class="w-12 h-12 rounded-lg bg-purple-900 flex items-center justify-center mb-6">⚡</div>
                     <h3 class="text-2xl font-bold text-white mb-3">Automation & Booking</h3>
-                    <p class="text-gray-400">Seamlessly integrate calendars, CRM, and booking funnels.</p>
+                    <p class="text-gray-400">Seamlessly integrate calendars, CRM, and booking funnels to save you time.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="plans" class="py-20 bg-gray-900 px-4">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-16">Pricing Foundations</h2>
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-4xl md:text-5xl font-extrabold text-white mb-16">Pricing Foundations</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-gray-950 p-10 rounded-3xl border border-gray-800 flex flex-col justify-between h-full">
                     <div>
                         <h3 class="text-xl font-bold text-white uppercase tracking-widest">BUILD</h3>
-                        <p class="mt-4 text-4xl font-extrabold text-white">$450<span class="text-sm">/Qtr</span></p>
+                        <p class="mt-4 text-5xl font-extrabold text-white">$450<span class="text-lg">/Qtr</span></p>
                     </div>
-                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="mt-8 bg-indigo-600 p-3 rounded-lg font-bold">Get Started</a>
+                    <ul class="mt-6 space-y-3 text-gray-400">
+                        <li>✓ Google Profile</li>
+                        <li>✓ Social Setup (1)</li>
+                    </ul>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="mt-8 block text-center bg-indigo-600 py-4 rounded-xl font-bold">Get Started</a>
                 </div>
-                <div class="bg-indigo-950 p-10 rounded-3xl border-2 border-indigo-700 flex flex-col justify-between h-full">
+                <div class="bg-indigo-950 p-10 rounded-3xl border-2 border-indigo-700 flex flex-col justify-between h-full relative">
+                    <span class="absolute top-0 right-0 mt-6 mr-6 bg-green-500 text-green-950 text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
                     <div>
                         <h3 class="text-xl font-bold text-white uppercase tracking-widest">SECURE</h3>
-                        <p class="mt-4 text-4xl font-extrabold text-white">$750<span class="text-sm">/Qtr</span></p>
+                        <p class="mt-4 text-5xl font-extrabold text-white">$750<span class="text-lg">/Qtr</span></p>
                     </div>
-                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="mt-8 bg-white text-indigo-900 p-3 rounded-lg font-bold">Secure Growth</a>
+                    <ul class="mt-6 space-y-3 text-white">
+                        <li>✓ Everything in Build</li>
+                        <li>✓ Biweekly Updates</li>
+                    </ul>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="mt-8 block text-center bg-white text-indigo-950 py-4 rounded-xl font-bold">Secure Growth</a>
                 </div>
                 <div class="bg-gray-950 p-10 rounded-3xl border border-gray-800 flex flex-col justify-between h-full">
                     <div>
                         <h3 class="text-xl font-bold text-white uppercase tracking-widest">MONETIZE</h3>
-                        <p class="mt-4 text-4xl font-extrabold text-white">$1,200<span class="text-sm">/Qtr</span></p>
+                        <p class="mt-4 text-5xl font-extrabold text-white">$1,200<span class="text-lg">/Qtr</span></p>
                     </div>
-                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="mt-8 bg-indigo-600 p-3 rounded-lg font-bold">Build Dominance</a>
+                    <ul class="mt-6 space-y-3 text-gray-400">
+                        <li>✓ Full Digital Build</li>
+                        <li>✓ Weekly Updates</li>
+                    </ul>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="mt-8 block text-center bg-indigo-600 py-4 rounded-xl font-bold">Build Dominance</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="ecosystem" class="py-20 bg-gray-950 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-center text-4xl font-extrabold text-white mb-16">The Nuel Business Ecosystem</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <a href="https://www.nuelpropertyservices.com" class="bg-gray-900 p-6 rounded-xl border border-gray-800">Nuel Property Services</a>
-                <a href="https://ondemand.nuelpropertyservices.com" class="bg-gray-900 p-6 rounded-xl border border-gray-800">Nuel On-Demand</a>
-                <a href="https://slc.nuelpropertyservices.com" class="bg-gray-900 p-6 rounded-xl border border-gray-800">Shared Leadership Circle</a>
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold text-white mb-16">The Nuel Business Ecosystem</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="https://www.nuelpropertyservices.com" class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition">
+                    <h3 class="font-bold text-white">Nuel Property Services</h3>
+                </a>
+                <a href="https://ondemand.nuelpropertyservices.com" class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition">
+                    <h3 class="font-bold text-white">Nuel On-Demand</h3>
+                </a>
+                <a href="https://slc.nuelpropertyservices.com" class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition">
+                    <h3 class="font-bold text-white">Shared Leadership Circle</h3>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="partnerships" class="py-20 bg-gray-900 px-4 border-t border-gray-800">
+    <section id="partnerships" class="py-20 bg-gray-900 px-4">
         <div class="max-w-7xl mx-auto">
             <div style="background-color: #000; padding: 40px; border: 2px solid #00ff00; max-width: 650px; margin: 0 auto; font-family: 'Courier New', Courier, monospace; color: #00ff00; box-shadow: 10px 10px 0px #111;">
                 
-                <h3 style="text-transform: uppercase; letter-spacing: 3px; margin-top: 0; border-bottom: 2px solid #00ff00; padding-bottom: 10px; font-weight: bold; font-size: 1.2rem;">
+                <h3 style="text-transform: uppercase; letter-spacing: 3px; margin-top: 0; border-bottom: 2px solid #00ff00; padding-bottom: 15px; font-weight: bold;">
                     PARTNERSHIP_PROTOCOL_V1.0
                 </h3>
 
-                <div style="margin-top: 20px;">
+                <div style="margin-top: 25px;">
                     <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
                     <script>
                       hbspt.forms.create({
@@ -127,11 +148,13 @@
                 </div>
 
                 <p style="font-size: 0.7rem; margin-top: 25px; color: #444; text-align: center; text-transform: uppercase;">
-                    [SECURE DATA LINK ESTABLISHED]
+                    [SECURE DATA LINK ESTABLISHED WITH NUEL CRM]
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="
-        
+    <section id="booking" class="py-24 bg-gray-950 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold text-white mb
+                
