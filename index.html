@@ -23,6 +23,7 @@
                 <a href="#features" class="hover:text-white">Features</a>
                 <a href="#roadmap" class="hover:text-white">Roadmap</a>
                 <a href="#about" class="hover:text-white">About</a>
+                <a href="#contact" class="hover:text-white">Contact</a>
                 <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="hover:text-white">Booking</a>
             </div>
             <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2 rounded-full transition duration-300">Book A Call</a>
@@ -291,7 +292,46 @@
         </div>
     </section>
 
-    <section id="faq" class="py-20 bg-gray-950 px-4">
+    <section id="contact" class="py-20 bg-gray-950 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-indigo-400 font-semibold mb-2">Get In Touch</p>
+                <h2 class="text-4xl font-extrabold text-white">Contact Nuel Digital</h2>
+            </div>
+            <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 shadow-2xl">
+                <form action="https://formspree.io/f/mnuel1002@gmail.com" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                            <input type="text" name="name" id="name" required class="w-full bg-gray-950 border border-gray-800 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-indigo-500 transition duration-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                            <input type="email" name="email" id="email" required class="w-full bg-gray-950 border border-gray-800 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-indigo-500 transition duration-300">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-400 mb-2">Subject</label>
+                        <select name="subject" id="subject" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-indigo-500 transition duration-300">
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Free Digital Audit">Free Digital Audit</option>
+                            <option value="Partnership">Partnership</option>
+                            <option value="Nuel On-Demand">Nuel On-Demand</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                        <textarea name="message" id="message" rows="5" required class="w-full bg-gray-950 border border-gray-800 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-indigo-500 transition duration-300"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg py-4 rounded-xl transition duration-300 shadow-lg">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-gray-900 px-4">
         <div class="max-w-4xl mx-auto">
             <p class="text-center text-indigo-400 font-semibold mb-2">Got Questions?</p>
             <h2 class="text-center text-4xl font-extrabold text-white mb-16">Frequently Asked Questions</h2>
