@@ -6,544 +6,181 @@
     <title>Nuel Digital Assets Management - Build. Secure. Monetize.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .premium-gradient {
-            background: linear-gradient(90deg, #ff4d4d 0%, #a64dff 50%, #4d79ff 100%);
-        } /* Lightbox Container */ 
-.lightbox {
-    display: none; 
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(5px);
-    justify-content: center;
-    align-items: center;
-}
-
-/* The Image itself */
-.lightbox-content {
-    max-width: 85%;
-    max-height: 85%;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    animation: zoom 0.3s ease;
-}
-
-/* Close Button */
-.close-lightbox {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-@keyframes zoom {
-    from {transform: scale(0.7); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}
-}
-        
+        .premium-gradient { background: linear-gradient(90deg, #ff4d4d 0%, #a64dff 50%, #4d79ff 100%); }
+        .lightbox {
+            display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); justify-content: center; align-items: center;
+        }
+        .lightbox-content { max-width: 90%; max-height: 80%; border-radius: 15px; box-shadow: 0 0 50px rgba(0,0,0,0.8); animation: zoom 0.3s ease; }
+        @keyframes zoom { from {transform: scale(0.9); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+        .close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans">
 
-    <nav class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-            <div class="flex items-center">
-                <span class="text-2xl font-extrabold text-white">NUEL <span class="text-indigo-400">DIGITAL</span></span>
+    <nav class="bg-gray-900/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <span class="text-2xl font-black text-white tracking-tighter">NUEL <span class="text-indigo-400">DIGITAL</span></span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-gray-400">
+                <a href="#features" class="hover:text-white transition">Core</a>
+                <a href="#plans" class="hover:text-white transition">Plans</a>
+                <a href="#gallery" class="hover:text-white transition">Showcase</a>
+                <a href="#about" class="hover:text-white transition">About</a>
             </div>
-            <div class="hidden md:flex space-x-8 text-gray-300">
-                <a href="#plans" class="hover:text-white">Plans</a>
-                <a href="#features" class="hover:text-white">Features</a>
-                <a href="#roadmap" class="hover:text-white">Roadmap</a>
-                <a href="#about" class="hover:text-white">About</a>
-                <a href="#contact" class="hover:text-white">Contact</a>
-                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="hover:text-white">Booking</a>
-            </div>
-            <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2 rounded-full transition duration-300">Book A Call</a>
+            <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2 rounded-full text-sm transition">BOOK A CALL</a>
         </div>
     </nav>
 
-    <header class="relative bg-gray-900 py-24 px-4 overflow-hidden">
+    <header class="relative pt-32 pb-20 px-6 text-center overflow-hidden">
         <div class="absolute inset-x-0 top-0 h-1 premium-gradient"></div>
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-                We Build and Manage Your Entire <span class="text-indigo-400">Digital Ecosystem</span>.
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
-                A Premium "House of Brands" System for Businesses & Creators. We focus on the tech so you can focus on the business.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#plans" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg px-10 py-4 rounded-xl transition duration-300">Explore Plans</a>
-                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-gray-800 hover:bg-gray-700 text-white font-bold text-lg px-10 py-4 rounded-xl transition duration-300">Book Strategy Session</a>
-            </div>
+        <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
+            Build Your <span class="text-indigo-400">Digital Empire.</span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            We manage the technical ecosystem so you can focus on the vision. Premium asset management for the modern entrepreneur.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#plans" class="bg-white text-black font-bold px-10 py-4 rounded-2xl hover:bg-gray-200 transition">View Plans</a>
+            <a href="#audit" class="bg-gray-800 text-white font-bold px-10 py-4 rounded-2xl hover:bg-gray-700 transition border border-gray-700">Free Digital Audit</a>
         </div>
     </header>
 
-    <section id="features" class="py-20 bg-gray-950 px-4">
+    <section id="features" class="py-24 px-6 bg-gray-900/30">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+            <div class="space-y-4">
+                <div class="text-4xl">🚀</div>
+                <h3 class="text-xl font-bold">Rapid Deployment</h3>
+                <p class="text-gray-400">Go from idea to a fully functioning digital presence in weeks, not months.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="text-4xl">🛡️</div>
+                <h3 class="text-xl font-bold">Secure Infrastructure</h3>
+                <p class="text-gray-400">We protect your assets with modern security protocols and consistent updates.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="text-4xl">💰</div>
+                <h3 class="text-xl font-bold">Monetization Ready</h3>
+                <p class="text-gray-400">Every design choice is made to turn visitors into long-term customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-center text-4xl font-extrabold text-white mb-16">The Nuel Digital Core</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <div class="w-12 h-12 rounded-lg bg-red-900 flex items-center justify-center mb-6">⚙️</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Google Business Optimization</h3>
-                    <p class="text-gray-400">Maximize visibility in local search and drive calls directly to your business.</p>
+            <h2 class="text-4xl font-bold text-center mb-16">Select Your Tier</h2>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800">
+                    <h4 class="text-indigo-400 font-bold uppercase tracking-widest text-sm">Build</h4>
+                    <div class="text-5xl font-black my-4">$450<span class="text-lg text-gray-500">/Qtr</span></div>
+                    <ul class="space-y-4 text-gray-400 mb-10">
+                        <li>• Google Business Profile</li>
+                        <li>• Core SEO Setup</li>
+                        <li>• 1 Social Platform</li>
+                    </ul>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block text-center border border-indigo-500 text-indigo-400 font-bold py-4 rounded-xl hover:bg-indigo-500 hover:text-white transition">Start Building</a>
                 </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-6">🌐</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Website & SEO Foundations</h3>
-                    <p class="text-gray-400">A professional, mobile-first presence designed for high conversion.</p>
+                <div class="bg-indigo-600 p-10 rounded-3xl shadow-2xl transform lg:scale-105">
+                    <h4 class="text-indigo-200 font-bold uppercase tracking-widest text-sm">Secure</h4>
+                    <div class="text-5xl font-black my-4 text-white">$750<span class="text-lg text-indigo-200">/Qtr</span></div>
+                    <ul class="space-y-4 text-indigo-50 text-opacity-80 mb-10">
+                        <li>• Everything in Build</li>
+                        <li>• Up to 3 Platforms</li>
+                        <li>• Bi-Weekly Updates</li>
+                    </ul>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block text-center bg-white text-indigo-600 font-bold py-4 rounded-xl hover:bg-gray-100 transition">Get Started</a>
                 </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <div class="w-12 h-12 rounded-lg bg-purple-900 flex items-center justify-center mb-6">⚡</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Automation & Booking</h3>
-                    <p class="text-gray-400">Seamlessly integrate calendars, CRM, and booking funnels to save you time.</p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <div class="w-12 h-12 rounded-lg bg-red-900 flex items-center justify-center mb-6">📈</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Social Media Setup & Growth</h3>
-                    <p class="text-gray-400">Platform optimization (up to 3) for serious scaling.</p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <div class="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center mb-6">🔄</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Content Updates</h3>
-                    <p class="text-gray-400">Regular, biweekly content updates keeping your ecosystem fresh.</p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <div class="w-12 h-12 rounded-lg bg-purple-900 flex items-center justify-center mb-6">🎨</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Digital Flyers & Brand Assets</h3>
-                    <p class="text-gray-400">Professional branding elements that define your "House of Brands."</p>
+                <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800">
+                    <h4 class="text-indigo-400 font-bold uppercase tracking-widest text-sm">Monetize</h4>
+                    <div class="text-5xl font-black my-4">$1,200<span class="text-lg text-gray-500">/Qtr</span></div>
+                    <ul class="space-y-4 text-gray-400 mb-10">
+                        <li>• Full Ecosystem Build</li>
+                        <li>• Advanced SEO & Ads</li>
+                        <li>• Weekly Management</li>
+                    </ul>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block text-center border border-indigo-500 text-indigo-400 font-bold py-4 rounded-xl hover:bg-indigo-500 hover:text-white transition">Scale High</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="why-choose" class="py-20 bg-gray-900 px-4">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Why Choose Nuel Digital?</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">We aren't just an agency; we're your dedicated digital growth partners. We build the engine so you can drive the car.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-950 p-8 rounded-2xl border border-gray-800 flex items-start space-x-5">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-900 flex items-center justify-center mt-1">
-                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">End-to-End Ownership</h3>
-                        <p class="text-gray-400">We don't just build a website and leave. We manage your entire digital presence from search to social.</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-950 p-8 rounded-2xl border border-gray-800 flex items-start space-x-5">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-900 flex items-center justify-center mt-1">
-                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Built for Conversion</h3>
-                        <p class="text-gray-400">Every element is designed with one goal: turning strangers into paying customers and loyal fans.</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-950 p-8 rounded-2xl border border-gray-800 flex items-start space-x-5">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-900 flex items-center justify-center mt-1">
-                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Zero Tech Headaches</h3>
-                        <p class="text-gray-400">You run the business. We handle the servers, the software, the updates, and the integrations.</p>
-                    </div>
-                </div>
-
-                <div class="bg-gray-950 p-8 rounded-2xl border border-gray-800 flex items-start space-x-5">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-900 flex items-center justify-center mt-1">
-                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Data-Driven Decisions</h3>
-                        <p class="text-gray-400">No guessing. We provide reporting on exactly what's driving growth for your brand.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="roadmap" class="py-20 bg-gray-950 px-4">
+    <section id="gallery" class="py-24 px-6 bg-gray-900/50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <p class="text-indigo-400 font-semibold mb-2">The Roadmap</p>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white">The Nuel Process</h2>
+                <h2 class="text-4xl font-bold mb-4">The Portfolio</h2>
+                <p class="text-gray-400">A look inside the digital assets we build and manage.</p>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 relative">
-                    <div class="absolute -top-6 left-10 w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-2xl font-black text-white shadow-xl">1</div>
-                    <h3 class="text-2xl font-bold text-white mb-4 mt-2">Strategy & Audit</h3>
-                    <p class="text-gray-400 leading-relaxed">We start by mapping out your business goals and performing a deep-dive audit of your current digital presence to find hidden growth opportunities.</p>
-                </div>
-
-                <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 relative">
-                    <div class="absolute -top-6 left-10 w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-2xl font-black text-white shadow-xl">2</div>
-                    <h3 class="text-2xl font-bold text-white mb-4 mt-2">Digital Build</h3>
-                    <p class="text-gray-400 leading-relaxed">Our team develops your high-conversion website, optimizes your SEO foundation, and sets up your automation funnels for a seamless client experience.</p>
-                </div>
-
-                <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 relative">
-                    <div class="absolute -top-6 left-10 w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-2xl font-black text-white shadow-xl">3</div>
-                    <h3 class="text-2xl font-bold text-white mb-4 mt-2">Launch & Scale</h3>
-                    <p class="text-gray-400 leading-relaxed">We go live with your new ecosystem and implement regular biweekly updates, providing the data and support needed to scale your brand effectively.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="plans" class="py-20 bg-gray-900 px-4">
-        <div class="max-w-7xl mx-auto">
-            <p class="text-center text-indigo-400 font-semibold mb-2">Build. Secure. Monetize.</p>
-            <h2 class="text-center text-4xl md:text-5xl font-extrabold text-white mb-6">Pricing Foundations</h2>
-            <p class="text-center text-gray-300 text-lg mb-16 max-w-2xl mx-auto">Choose the plan that fits your growth stage.</p>
-            
-            <div class="grid md:grid-cols-3 gap-8 items-start">
-                <div class="bg-gray-950 p-10 rounded-3xl border border-gray-800 shadow-2xl space-y-8 flex flex-col justify-between h-full">
-                    <div>
-                        <h3 class="text-2xl font-extrabold text-white uppercase tracking-widest mb-1">BUILD</h3>
-                        <p class="text-gray-400">Perfect for startups</p>
-                        <p class="mt-6 text-5xl font-extrabold text-white">$450<span class="text-lg font-medium text-gray-500">/Quarter</span></p>
-                        <p class="mt-2 text-indigo-400 font-semibold">$1,500/Year <span class="text-green-400">(Save $300)</span></p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="gallery-card group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="IMG_20260514_072217.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span class="text-white font-bold border-2 border-white px-6 py-2">View Asset</span>
                     </div>
-                    <ul class="space-y-4 text-gray-300">
-                        <li>✓ Google Profile Optimization</li>
-                        <li>✓ Social Media Setup (1)</li>
-                        <li>✓ Professional Email Setup</li>
-                    </ul>
-                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block text-center w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition duration-300">Get Started</a>
                 </div>
-
-                <div class="bg-indigo-950 p-10 rounded-3xl border-2 border-indigo-700 shadow-2xl space-y-8 flex flex-col justify-between h-full relative">
-                    <span class="absolute top-0 right-0 mt-6 mr-6 bg-green-500 text-green-950 text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
-                    <div>
-                        <h3 class="text-2xl font-extrabold text-white uppercase tracking-widest mb-1">SECURE</h3>
-                        <p class="text-gray-300">Scaling brands</p>
-                        <p class="mt-6 text-5xl font-extrabold text-white">$750<span class="text-lg font-medium text-indigo-300">/Quarter</span></p>
-                        <p class="mt-2 text-indigo-200 font-semibold">$2,600/Year <span class="text-green-300">(Save $400)</span></p>
+                <div class="gallery-card group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="Screenshot_20260514-064245.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span class="text-white font-bold border-2 border-white px-6 py-2">View System</span>
                     </div>
-                    <ul class="space-y-4 text-white">
-                        <li>✓ Everything in Build</li>
-                        <li>✓ Up to 3 Platforms</li>
-                        <li>✓ Biweekly Updates</li>
-                    </ul>
-                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block text-center w-full bg-white hover:bg-gray-200 text-indigo-950 font-bold text-lg px-8 py-4 rounded-xl transition duration-300">Secure Growth</a>
                 </div>
-
-                <div class="bg-gray-950 p-10 rounded-3xl border border-gray-800 shadow-2xl space-y-8 flex flex-col justify-between h-full">
-                    <div>
-                        <h3 class="text-2xl font-extrabold text-white uppercase tracking-widest mb-1">MONETIZE</h3>
-                        <p class="text-gray-400">Industry leaders</p>
-                        <p class="mt-6 text-5xl font-extrabold text-white">$1,200<span class="text-lg font-medium text-gray-500">/Quarter</span></p>
-                        <p class="mt-2 text-indigo-400 font-semibold">$4,000/Year <span class="text-green-400">(Save $500)</span></p>
+                <div class="gallery-card group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="1000005239.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span class="text-white font-bold border-2 border-white px-6 py-2">View Brand</span>
                     </div>
-                    <ul class="space-y-4 text-gray-300">
-                        <li>✓ Full Digital Build</li>
-                        <li>✓ Weekly Updates</li>
-                        <li>✓ Advanced SEO</li>
-                    </ul>
-                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block text-center w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg px-8 py-4 rounded-xl transition duration-300">Build Dominance</a>
                 </div>
             </div>
         </div>
     </section>
-<div id="lightbox" class="lightbox">
-    <span class="close-lightbox">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-    <div id="caption"></div>
-</div>
-    
-    <section id="audit" class="py-24 premium-gradient">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="bg-gray-950 p-12 md:p-16 rounded-[3rem] shadow-2xl text-center border border-white/10">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
-                    Is Your Digital Presence <span class="text-red-500">Costing You Customers?</span>
-                </h2>
-                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                    Get a <span class="text-white font-bold">Free 15-Minute Digital Audit</span>. I will personally review your Google Business Profile and website to identify 3 major opportunities for growth. No catch, just pure value.
+
+    <section id="audit" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto premium-gradient p-[1px] rounded-[3rem]">
+            <div class="bg-gray-950 p-12 md:p-20 rounded-[3rem] text-center">
+                <h2 class="text-4xl md:text-5xl font-black mb-6">Free 15-Minute Audit</h2>
+                <p class="text-gray-400 text-lg mb-10">Stop guessing. Let me personally review your digital footprint and give you 3 actionable growth steps.</p>
+                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-white text-black font-bold px-12 py-5 rounded-2xl text-xl hover:shadow-2xl transition inline-block">Claim Your Audit</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 bg-gray-900/30">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <img src="IMG_20260514_074822.jpg" alt="Emmanuel Modi" class="w-64 h-64 rounded-3xl object-cover shadow-2xl border-4 border-indigo-900">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold">Emmanuel Modi</h2>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    Founder of Nuel Business Groups. I bridge the gap between complex software engineering and practical business growth. My mission is simple: create digital ecosystems that work for you, so you can live a "Simple Life".
                 </p>
-                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="inline-block bg-white hover:bg-gray-100 text-indigo-950 font-extrabold text-xl px-12 py-5 rounded-2xl transition duration-300 transform hover:scale-105 shadow-xl">
-                    Claim My Free Audit Now
-                </a>
-                <p class="mt-6 text-gray-500 text-sm italic">Limited spots available per week.</p>
+                <div class="flex gap-4">
+                    <span class="bg-gray-800 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest">Founder</span>
+                    <span class="bg-gray-800 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest">Technologist</span>
+                </div>
             </div>
         </div>
     </section>
 
+    <footer class="py-12 border-t border-gray-900 text-center">
+        <p class="text-gray-600 text-sm">© 2026 Nuel Digital Assets Management. All Rights Reserved.</p>
+        <p class="text-gray-500 text-xs mt-2 italic">Simple Life, Simple Business.</p>
+    </footer>
 
-
-    <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: nowrap; margin: 20px 0;">
-  <section id="about" class="...">
-  <!-- Image 1 -->
-  <div style="flex: 1;">
-    <img src="IMG_20260514_074822.jpg" alt="Emmanuel Modi" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; display: block;">
-  </div>
-
-  <!-- Image 2 -->
-  <div style="flex: 1;">
-    <img src="IMG_20260514_072217.jpg" alt="Emmanuel Modi" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; display: block;">
-  </div>
-
-  <!-- Image 3 -->
-  <div style="flex: 1;">
-    <img src="1000005239.png" alt="Emmanuel Modi" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; display: block;">
-  </div>
-
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
     </div>
-    
-      
-    
-    
-    
-                
-            <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 shadow-2xl">
-                <h3 class="text-3xl font-bold text-white mb-6">Emmanuel Modi</h3>
-                <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
-                    <p>I am an entrepreneur, a student, an author and a lifelong technologist dedicated to building the future of digital ecosystems. My journey in tech began with a natural aptitude for solving complex computer issues—a skill I've always viewed as a God-given gift.</p>
-                    <p>After completing my IT Support certification at Merit America, I am currently advancing my expertise by pursuing a degree in Computer Science with a specialization in Software Engineering. This technical foundation allows me to bridge the gap between high-level business strategy and robust technical implementation.</p>
-                    <p>To date, I have built and deployed over five professional web platforms using GitHub, each designed to empower businesses and communities through modern technology. At Nuel Business Groups, my mission is to use these gifts to create simple, effective solutions that help others thrive in an increasingly digital world.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="ecosystem" class="py-20 bg-gray-900 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-center text-4xl font-extrabold text-white mb-16">The Nuel Business Ecosystem</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <a href="https://www.nuelpropertyservices.com" class="bg-gray-950 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition duration-300 flex flex-col">
-                    <h3 class="text-xl font-bold text-white mb-2">Nuel Property Services</h3>
-                    <p class="text-gray-400 text-sm">Professional cleaning and maintenance solutions for home and office.</p>
-                </a>
-                <a href="https://ondemand.nuelpropertyservices.com" class="bg-gray-950 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition duration-300 flex flex-col">
-                    <h3 class="text-xl font-bold text-white mb-2">Nuel On-Demand</h3>
-                    <p class="text-gray-400 text-sm">Future-forward hardware and software products built for the modern era.</p>
-                </a>
-                <a href="https://slc.nuelpropertyservices.com" class="bg-gray-950 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition duration-300 flex flex-col">
-                    <h3 class="text-xl font-bold text-white mb-2">Shared Leadership Circle</h3>
-                    <p class="text-gray-400 text-sm">Empowering communities through collective movement and leadership.</p>
-                </a>
-                <a href="https://lha.nuelpropertyservices.com" class="bg-gray-950 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition duration-300 flex flex-col">
-                    <h3 class="text-xl font-bold text-white mb-2">Hoops Academy (LHA)</h3>
-                    <p class="text-gray-400 text-sm">Professional basketball training and youth mentorship in Monrovia.</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-gray-950 px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <p class="text-indigo-400 font-semibold mb-2">Get In Touch</p>
-                <h2 class="text-4xl font-extrabold text-white">Contact Nuel Digital</h2>
-            </div>
-            <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 shadow-2xl">
-                <form action="https://formspree.io/f/mykonlae" method="POST" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
-                            <input type="text" name="name" id="name" required class="w-full bg-gray-950 border border-gray-800 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-indigo-500 transition duration-300">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
-                            <input type="email" name="email" id="email" required class="w-full bg-gray-950 border border-gray-800 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-indigo-500 transition duration-300">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="subject" class="block text-sm font-medium text-gray-400 mb-2">Subject</label>
-                        <select name="subject" id="subject" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-indigo-500 transition duration-300">
-                            <option value="General Inquiry">General Inquiry</option>
-                            <option value="Free Digital Audit">Free Digital Audit</option>
-                            <option value="Partnership">Partnership</option>
-                            <option value="Nuel On-Demand">Nuel On-Demand</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                        <textarea name="message" id="message" rows="5" required class="w-full bg-gray-950 border border-gray-800 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-indigo-500 transition duration-300"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg py-4 rounded-xl transition duration-300 shadow-lg">
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="pt-8 pb-20 bg-gray-900 px-4">
-        <div class="max-w-4xl mx-auto"> <p class="text-center text-indigo-400 font-semibold -mt-4 mb-2 uppercase tracking-wide">
-  The Vision Behind Nuel Digital
-        </p>
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lImg = document.getElementById('lightbox-img');
         
-         <!-- Video Navigation Bar -->
-<div class="flex flex-wrap justify-center items-center gap-2 mb-10 w-full px-4">
-  <a href="#empowerment" class="bg-[#5a46e5] hover:opacity-90 text-white text-[10px] font-bold py-2 px-3 rounded-full uppercase tracking-tighter transition-all">
-    1. Empowerment
-  </a>
-  <a href="#human-os" class="bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-bold py-2 px-3 rounded-full uppercase tracking-tighter border border-gray-700 transition-all">
-    2. Human OS
-  </a>
-  <a href="#sync" class="bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-bold py-2 px-3 rounded-full uppercase tracking-tighter border border-gray-700 transition-all">
-    3. Sync
-  </a>
-  <a href="#new-state" class="bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-bold py-2 px-3 rounded-full uppercase tracking-tighter border border-gray-700 transition-all">
-    4. New State
-  </a>
-</div>
-            
-            
- <video width="100%" controls>
-  <source src="empowerment_protocol_1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
- </video>
-            <video width="100%" controls>
-  <source src="the_human_os.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-            <video width="100%" controls>
-  <source src="the_quiet_sync.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-            </video
-                <!-- Video 3: Defining the New State -->
-<div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800">
-    <h3 class="p-4 text-lg font-bold text-white border-b border-gray-800">Defining the New State</h3>
-    <video width="100%" controls class="aspect-video">
-        <source src="defining_the_new_state_1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
-            
-            
-            <p class="text-center text-indigo-400 font-semibold mt-16 mb-2">Got Questions?</p>
-              <h2 class="text-center text-4xl font-extrabold text-white mt-16 mb-8">Frequently Asked Questions</h2>
-            
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <h3 class="text-xl font-bold text-white mb-3">What services are included in each plan?</h3>
-                    <p class="text-gray-400">Each plan is designed for a different growth stage. The <span class="text-indigo-400 font-semibold">Build</span> plan covers Google Profile Optimization, one social media platform setup, and professional email setup. The <span class="text-indigo-400 font-semibold">Secure</span> plan adds up to 3 platforms and biweekly content updates. The <span class="text-indigo-400 font-semibold">Monetize</span> plan delivers a full digital build with weekly updates and advanced SEO.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <h3 class="text-xl font-bold text-white mb-3">How long does it take to set up my digital ecosystem?</h3> const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.close-lightbox');
+        document.querySelectorAll('.gallery-card').forEach(card => {
+            card.onclick = () => {
+                lightbox.style.display = 'flex';
+                lImg.src = card.querySelector('img').src;
+            };
+        });
 
-// Select all images inside your gallery-card
-document.querySelectorAll('.gallery-card img').forEach(image => {
-    image.onclick = () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = image.src; // Set the modal image to the clicked image
-    };
-});
-
-// Close when clicking the 'X'
-closeBtn.onclick = () => {
-    lightbox.style.display = 'none';
-};
-
-// Close when clicking anywhere outside the image
-lightbox.onclick = (e) => {
-    if (e.target !== lightboxImg) {
-        lightbox.style.display = 'none';
-    }
-};
-                    
-                    <p class="text-gray-400">Most clients are fully onboarded within <span class="text-white font-semibold">2–4 weeks</span>, depending on the plan. We start with a strategy call to map out your goals, then our team handles every aspect of the build — from Google optimization to website launch and social media configuration — so you can stay focused on your business.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <h3 class="text-xl font-bold text-white mb-3">What kind of ongoing support do I receive?</h3>
-                    <p class="text-gray-400">Every plan includes dedicated support via email and phone. Secure and Monetize clients receive regular content updates (biweekly or weekly) to keep your digital presence current. We also provide performance insights and recommendations so your ecosystem continues to grow and convert.</p>
-                </div>
-                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                    <h3 class="text-xl font-bold text-white mb-3">Can I upgrade my plan later?</h3>
-                    <p class="text-gray-400">Absolutely. Many of our clients start with the Build plan and upgrade as their business scales. You can move to a higher tier at any time — we'll seamlessly migrate your existing assets and add the new services without any downtime or disruption.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="booking" class="py-24 bg-gray-900 px-4">
-        <div class="max-w-4xl mx-auto text-center border-t border-gray-800 pt-20">
-            <h2 class="text-4xl font-extrabold text-white mb-6">Book A Strategy Call</h2>
-            <p class="text-xl text-gray-300 mb-12 max-w-xl mx-auto">Ready to build your digital real estate portfolio? Let's discuss your custom roadmap.</p>
-            <div class="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto bg-gray-950 p-10 rounded-3xl border border-gray-800">
-               <div class="flex items-center space-x-4">
-                    <span class="text-3xl">📞</span>
-                    <div>
-                        <p class="text-sm font-semibold text-gray-500">Phone</p>
-                        <p class="text-lg text-white font-mono">320-217-3955</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <span class="text-3xl">✉️</span>
-                    <div>
-                        <p class="text-sm font-semibold text-gray-500">Email</p>
-                        <p class="text-lg text-white font-mono">nueldigitalassets@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-             <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="inline-block mt-12 bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-12 py-5 rounded-2xl transition duration-300">Book Your Call Now</a>
-        </div>
-    </section>
-
-    <footer class="py-8 bg-gray-950 px-4 border-t border-gray-800 text-center text-gray-600 text-sm">
-        <p>&copy; 2026 Nuel Digital Assets Management. All Rights Reserved.</p>
-        <p class="mt-1">Build. Secure. Monetize. Simple Business, Simplified Life.</p>
-    </footer>
-
-</body>
-</html>
-       
-    
-
-  
-                 
-       
-
-           
-                      
-                      
-
-               
-                    
-               
-                    
-       
-       
-                       
-                      
-                    
-                
-    
-             
-       
-   
-        <p>&copy; 2026 Nuel Digital Assets Management. All Rights Reserved.</p>
-        <p class="mt-1">Build. Secure. Monetize. Simple Business, Simplified Life.</p>
-    </footer>
-
+        lightbox.onclick = (e) => { if(e.target !== lImg) lightbox.style.display = 'none'; };
+    </script>
 </body>
 </html>
