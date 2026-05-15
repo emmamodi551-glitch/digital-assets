@@ -6,162 +6,219 @@
     <title>Nuel Digital Assets Management - Build. Secure. Monetize.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .premium-gradient { background: linear-gradient(90deg, #ff4d4d 0%, #a64dff 50%, #4d79ff 100%); }
-        .lightbox {
-            display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); justify-content: center; align-items: center;
+        .premium-gradient {
+            background: linear-gradient(90deg, #ff4d4d 0%, #a64dff 50%, #4d79ff 100%);
         }
-        .lightbox-content { max-width: 90%; max-height: 80%; border-radius: 15px; box-shadow: 0 0 50px rgba(0,0,0,0.8); animation: zoom 0.3s ease; }
-        @keyframes zoom { from {transform: scale(0.9); opacity: 0;} to {transform: scale(1); opacity: 1;} }
-        .close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
-        html { scroll-behavior: smooth; }
+
+        /* Lightbox Container */
+        .lightbox {
+            display: none; 
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            animation: zoom 0.3s ease;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.8); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans">
 
-    <nav class="bg-gray-900/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <span class="text-2xl font-black text-white tracking-tighter">NUEL <span class="text-indigo-400">DIGITAL</span></span>
-            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-gray-400">
-                <a href="#features" class="hover:text-white transition">Core</a>
-                <a href="#plans" class="hover:text-white transition">Plans</a>
-                <a href="#gallery" class="hover:text-white transition">Showcase</a>
-                <a href="#about" class="hover:text-white transition">About</a>
+    <nav class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <span class="text-2xl font-extrabold text-white uppercase tracking-tighter">NUEL <span class="text-indigo-400">DIGITAL</span></span>
             </div>
-            <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2 rounded-full text-sm transition">BOOK A CALL</a>
+            <div class="hidden md:flex space-x-8 text-gray-300">
+                <a href="#plans" class="hover:text-white">Plans</a>
+                <a href="#features" class="hover:text-white">Features</a>
+                <a href="#roadmap" class="hover:text-white">Roadmap</a>
+                <a href="#about" class="hover:text-white">About</a>
+                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="hover:text-white">Booking</a>
+            </div>
+            <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2 rounded-full transition duration-300">Book A Call</a>
         </div>
     </nav>
 
-    <header class="relative pt-32 pb-20 px-6 text-center overflow-hidden">
+    <header class="relative bg-gray-900 py-24 px-4 overflow-hidden">
         <div class="absolute inset-x-0 top-0 h-1 premium-gradient"></div>
-        <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
-            Build Your <span class="text-indigo-400">Digital Empire.</span>
-        </h1>
-        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            We manage the technical ecosystem so you can focus on the vision. Premium asset management for the modern entrepreneur.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#plans" class="bg-white text-black font-bold px-10 py-4 rounded-2xl hover:bg-gray-200 transition">View Plans</a>
-            <a href="#audit" class="bg-gray-800 text-white font-bold px-10 py-4 rounded-2xl hover:bg-gray-700 transition border border-gray-700">Free Digital Audit</a>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                We Build and Manage Your Entire <span class="text-indigo-400">Digital Ecosystem</span>.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                A Premium "House of Brands" System for Businesses & Creators. We focus on the tech so you can focus on the business.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#plans" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg px-10 py-4 rounded-xl transition duration-300 text-center">Explore Plans</a>
+                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-gray-800 hover:bg-gray-700 text-white font-bold text-lg px-10 py-4 rounded-xl transition duration-300 text-center">Book Strategy Session</a>
+            </div>
         </div>
     </header>
 
-    <section id="features" class="py-24 px-6 bg-gray-900/30">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-            <div class="space-y-4">
-                <div class="text-4xl">🚀</div>
-                <h3 class="text-xl font-bold">Rapid Deployment</h3>
-                <p class="text-gray-400">Go from idea to a fully functioning digital presence in weeks, not months.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="text-4xl">🛡️</div>
-                <h3 class="text-xl font-bold">Secure Infrastructure</h3>
-                <p class="text-gray-400">We protect your assets with modern security protocols and consistent updates.</p>
-            </div>
-            <div class="space-y-4">
-                <div class="text-4xl">💰</div>
-                <h3 class="text-xl font-bold">Monetization Ready</h3>
-                <p class="text-gray-400">Every design choice is made to turn visitors into long-term customers.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="plans" class="py-24 px-6">
+    <section id="features" class="py-20 bg-gray-950 px-4">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16">Select Your Tier</h2>
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800">
-                    <h4 class="text-indigo-400 font-bold uppercase tracking-widest text-sm">Build</h4>
-                    <div class="text-5xl font-black my-4">$450<span class="text-lg text-gray-500">/Qtr</span></div>
-                    <ul class="space-y-4 text-gray-400 mb-10">
-                        <li>• Google Business Profile</li>
-                        <li>• Core SEO Setup</li>
-                        <li>• 1 Social Platform</li>
-                    </ul>
-                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block text-center border border-indigo-500 text-indigo-400 font-bold py-4 rounded-xl hover:bg-indigo-500 hover:text-white transition">Start Building</a>
+            <h2 class="text-center text-4xl font-extrabold text-white mb-16 uppercase tracking-widest">The Nuel Digital Core</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-red-900/30 text-red-400 flex items-center justify-center mb-6 text-2xl">⚙️</div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Google Business Optimization</h3>
+                    <p class="text-gray-400">Maximize visibility in local search and drive calls directly to your business.</p>
                 </div>
-                <div class="bg-indigo-600 p-10 rounded-3xl shadow-2xl transform lg:scale-105">
-                    <h4 class="text-indigo-200 font-bold uppercase tracking-widest text-sm">Secure</h4>
-                    <div class="text-5xl font-black my-4 text-white">$750<span class="text-lg text-indigo-200">/Qtr</span></div>
-                    <ul class="space-y-4 text-indigo-50 text-opacity-80 mb-10">
-                        <li>• Everything in Build</li>
-                        <li>• Up to 3 Platforms</li>
-                        <li>• Bi-Weekly Updates</li>
-                    </ul>
-                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block text-center bg-white text-indigo-600 font-bold py-4 rounded-xl hover:bg-gray-100 transition">Get Started</a>
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-indigo-900/30 text-indigo-400 flex items-center justify-center mb-6 text-2xl">🌐</div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Website & SEO Foundations</h3>
+                    <p class="text-gray-400">A professional, mobile-first presence designed for high conversion.</p>
                 </div>
-                <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800">
-                    <h4 class="text-indigo-400 font-bold uppercase tracking-widest text-sm">Monetize</h4>
-                    <div class="text-5xl font-black my-4">$1,200<span class="text-lg text-gray-500">/Qtr</span></div>
-                    <ul class="space-y-4 text-gray-400 mb-10">
-                        <li>• Full Ecosystem Build</li>
-                        <li>• Advanced SEO & Ads</li>
-                        <li>• Weekly Management</li>
-                    </ul>
-                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block text-center border border-indigo-500 text-indigo-400 font-bold py-4 rounded-xl hover:bg-indigo-500 hover:text-white transition">Scale High</a>
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-indigo-500 transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-purple-900/30 text-purple-400 flex items-center justify-center mb-6 text-2xl">⚡</div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Automation & Booking</h3>
+                    <p class="text-gray-400">Seamlessly integrate calendars, CRM, and booking funnels to save you time.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="py-24 px-6 bg-gray-900/50">
+    <section id="plans" class="py-20 bg-gray-900 px-4">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">The Portfolio</h2>
-                <p class="text-gray-400">A look inside the digital assets we build and manage.</p>
+            <p class="text-center text-indigo-400 font-semibold mb-2 uppercase tracking-widest">Build. Secure. Monetize.</p>
+            <h2 class="text-center text-4xl md:text-5xl font-extrabold text-white mb-6">Pricing Foundations</h2>
+            <div class="grid md:grid-cols-3 gap-8 items-stretch mt-12">
+                <div class="bg-gray-950 p-10 rounded-3xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white uppercase mb-1">BUILD</h3>
+                        <p class="text-5xl font-extrabold text-white mt-4">$450<span class="text-lg text-gray-500">/Qtr</span></p>
+                    </div>
+                    <ul class="my-8 space-y-4 text-gray-400">
+                        <li>✓ Google Profile Optimization</li>
+                        <li>✓ Social Media Setup (1)</li>
+                        <li>✓ Professional Email Setup</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-indigo-600 py-4 rounded-xl font-bold hover:bg-indigo-700 transition">Get Started</a>
+                </div>
+                <div class="bg-indigo-950 p-10 rounded-3xl border-2 border-indigo-500 relative flex flex-col justify-between transform scale-105">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-black text-xs font-bold px-4 py-1 rounded-full uppercase">Most Popular</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-white uppercase mb-1">SECURE</h3>
+                        <p class="text-5xl font-extrabold text-white mt-4">$750<span class="text-lg text-indigo-300">/Qtr</span></p>
+                    </div>
+                    <ul class="my-8 space-y-4 text-indigo-100">
+                        <li>✓ Everything in Build</li>
+                        <li>✓ Up to 3 Platforms</li>
+                        <li>✓ Biweekly Updates</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-white text-indigo-950 py-4 rounded-xl font-bold hover:bg-gray-200 transition">Secure Growth</a>
+                </div>
+                <div class="bg-gray-950 p-10 rounded-3xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white uppercase mb-1">MONETIZE</h3>
+                        <p class="text-5xl font-extrabold text-white mt-4">$1,200<span class="text-lg text-gray-500">/Qtr</span></p>
+                    </div>
+                    <ul class="my-8 space-y-4 text-gray-400">
+                        <li>✓ Full Digital Build</li>
+                        <li>✓ Weekly Updates</li>
+                        <li>✓ Advanced SEO</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-indigo-600 py-4 rounded-xl font-bold hover:bg-indigo-700 transition">Build Dominance</a>
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="gallery-card group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
-                    <img src="IMG_20260514_072217.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <span class="text-white font-bold border-2 border-white px-6 py-2">View Asset</span>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-gray-950 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-indigo-400 font-semibold mb-2 uppercase tracking-widest">Showcase</p>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-12">Digital Assets Gallery</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-card group relative overflow-hidden rounded-2xl border border-gray-800 cursor-pointer">
+                    <img src="IMG_20260514_072217.jpg" alt="Brand Asset" class="w-full h-72 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Creative Identity</span>
                     </div>
                 </div>
-                <div class="gallery-card group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
-                    <img src="Screenshot_20260514-064245.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <span class="text-white font-bold border-2 border-white px-6 py-2">View System</span>
+                <div class="gallery-card group relative overflow-hidden rounded-2xl border border-gray-800 cursor-pointer">
+                    <img src="Screenshot_20260514-064245.png" alt="Platform View" class="w-full h-72 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-bold text-lg">System Dashboard</span>
                     </div>
                 </div>
-                <div class="gallery-card group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
-                    <img src="1000005239.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <span class="text-white font-bold border-2 border-white px-6 py-2">View Brand</span>
+                <div class="gallery-card group relative overflow-hidden rounded-2xl border border-gray-800 cursor-pointer">
+                    <img src="1000005239.png" alt="Identity Design" class="w-full h-72 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Nuel Digital Logo</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="audit" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto premium-gradient p-[1px] rounded-[3rem]">
-            <div class="bg-gray-950 p-12 md:p-20 rounded-[3rem] text-center">
-                <h2 class="text-4xl md:text-5xl font-black mb-6">Free 15-Minute Audit</h2>
-                <p class="text-gray-400 text-lg mb-10">Stop guessing. Let me personally review your digital footprint and give you 3 actionable growth steps.</p>
-                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-white text-black font-bold px-12 py-5 rounded-2xl text-xl hover:shadow-2xl transition inline-block">Claim Your Audit</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-24 px-6 bg-gray-900/30">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
-            <img src="IMG_20260514_074822.jpg" alt="Emmanuel Modi" class="w-64 h-64 rounded-3xl object-cover shadow-2xl border-4 border-indigo-900">
-            <div class="space-y-6">
-                <h2 class="text-4xl font-bold">Emmanuel Modi</h2>
-                <p class="text-gray-400 text-lg leading-relaxed">
-                    Founder of Nuel Business Groups. I bridge the gap between complex software engineering and practical business growth. My mission is simple: create digital ecosystems that work for you, so you can live a "Simple Life".
+    <section id="audit" class="py-24 premium-gradient">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-gray-950 p-12 md:p-16 rounded-[3rem] shadow-2xl text-center border border-white/10">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
+                    Is Your Digital Presence <span class="text-red-500">Costing You Customers?</span>
+                </h2>
+                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                    Get a <span class="text-white font-bold">Free 15-Minute Digital Audit</span>. I will personally identify 3 major growth opportunities.
                 </p>
-                <div class="flex gap-4">
-                    <span class="bg-gray-800 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest">Founder</span>
-                    <span class="bg-gray-800 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest">Technologist</span>
+                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="inline-block bg-white hover:bg-gray-100 text-indigo-950 font-extrabold text-xl px-12 py-5 rounded-2xl transition shadow-xl">
+                    Claim My Free Audit Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-gray-900 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gray-950 p-10 md:p-16 rounded-3xl border border-gray-800 flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/3">
+                    <img src="IMG_20260514_074822.jpg" alt="Emmanuel Modi" class="rounded-2xl border-4 border-indigo-900 shadow-2xl">
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h3 class="text-3xl font-bold text-white mb-6">Emmanuel Modi</h3>
+                    <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+                        <p>I am an entrepreneur, author, and lifelong technologist dedicated to building the future of digital ecosystems. My journey in tech began with a natural aptitude for solving complex issues—a skill I view as a God-given gift.</p>
+                        <p>Pursuing Computer Science with a focus on Software Engineering, I bridge the gap between business strategy and technical implementation to help brands scale effectively.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-gray-900 text-center">
-        <p class="text-gray-600 text-sm">© 2026 Nuel Digital Assets Management. All Rights Reserved.</p>
-        <p class="text-gray-500 text-xs mt-2 italic">Simple Life, Simple Business.</p>
+    <footer class="py-12 bg-gray-950 border-t border-gray-900 text-center">
+        <p class="text-gray-500">&copy; 2026 Nuel Digital. All rights reserved. Simple Life, Simple Business.</p>
     </footer>
 
     <div id="lightbox" class="lightbox">
@@ -171,16 +228,34 @@
 
     <script>
         const lightbox = document.getElementById('lightbox');
-        const lImg = document.getElementById('lightbox-img');
-        
-        document.querySelectorAll('.gallery-card').forEach(card => {
-            card.onclick = () => {
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-lightbox');
+
+        // Select all images inside gallery cards
+        document.querySelectorAll('.gallery-card img').forEach(image => {
+            image.onclick = () => {
                 lightbox.style.display = 'flex';
-                lImg.src = card.querySelector('img').src;
+                lightboxImg.src = image.src;
             };
         });
 
-        lightbox.onclick = (e) => { if(e.target !== lImg) lightbox.style.display = 'none'; };
+        // Close logic
+        closeBtn.onclick = () => { lightbox.style.display = 'none'; };
+        lightbox.onclick = (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        };
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
