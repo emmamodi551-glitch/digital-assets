@@ -22,7 +22,8 @@
                 <a href="#features" class="hover:text-white">Features</a>
                 <a href="#roadmap" class="hover:text-white">Roadmap</a>
                 <a href="#about" class="hover:text-white">About</a>
-                <a href="#contact" class="hover:text-white">Contact</a>
+                <a href="#contact" class="hover:text-white">Contact</a> 
+                <a href="#portfolio" style="color: white; text-decoration: none; margin: 0 15px;">Portfolio</a>
                 <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="hover:text-white">Booking</a>
             </div>
             <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2 rounded-full transition duration-300">Book A Call</a>
@@ -301,8 +302,8 @@
             </div>
         </div>
     </section>
-   
-    <section id="portfolio" style="padding: 60px 20px; max-width: 800px; margin: auto; text-align: center; font-family: sans-serif;">
+
+    <section id="portfolio" style="padding: 80px 20px; max-width: 800px; margin: auto; text-align: center; font-family: sans-serif; scroll-margin-top: 70px;">
     <h2 style="color: #a855f7; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; font-size: 2rem;">Digital Assets Portfolio</h2>
     
     <div class="slideshow-container" style="position: relative; background: #111; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #333;">
@@ -331,25 +332,12 @@
     </div>
 </section>
 
-<script>
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+<style>
+html {
+  scroll-behavior: smooth;
 }
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slides[slideIndex-1].style.display = "block";  
-}
-    </script>
+</style>
+    
     
     
     <section id="contact" class="py-20 bg-gray-950 px-4">
