@@ -28,12 +28,17 @@
         body {
   font-family: 'Inter', sans-serif;
         }
+        /* Hamburger Logic */
+        #menu-toggle:checked ~ #mobile-menu {
+            display: block;
+        }
     </style>
 </head> 
 <body class="bg-gray-950 text-gray-100 font-sans">
 
     <nav class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between relative">
+            <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <img src="images/nuel-logo.png" alt="Nuel Digital Logo" class="h-9 w-9 object-contain rounded-lg shadow-md shrink-0">
                 <div class="flex flex-col justify-center">
@@ -46,20 +51,47 @@
                 </div>
             </div>
 
-            <div class="hidden md:flex space-x-8 text-gray-300">
-                <a href="#plans" class="hover:text-white">Plans</a>
-                <a href="#features" class="hover:text-white">Features</a>
-                <a href="#roadmap" class="hover:text-white">Roadmap</a>
-                <a href="#portfolio" class="hover:text-white">Portfolio</a>
-                <a href="#vision" class="hover:text-white">Philosophy</a>
-                <a href="#about" class="hover:text-white">About</a>
-                <a href="#contact" class="hover:text-white">Contact</a>
-                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="hover:text-white">Booking</a>
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex space-x-8 text-gray-300">
+                <a href="#plans" class="hover:text-white transition">Plans</a>
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#roadmap" class="hover:text-white transition">Roadmap</a>
+                <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+                <a href="#vision" class="hover:text-white transition">Philosophy</a>
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
             </div>
 
-            <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition shadow-sm">
-                Book A Call
-            </a>
+            <!-- Right CTA & Hamburger -->
+            <div class="flex items-center space-x-4">
+                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="hidden sm:inline-block bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition shadow-sm">
+                    Book A Call
+                </a>
+                
+                <!-- Hamburger Button -->
+                <label for="menu-toggle" class="lg:hidden cursor-pointer p-2 text-gray-300 hover:text-white">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </label>
+            </div>
+
+            <!-- Hidden Checkbox for Menu Toggle -->
+            <input type="checkbox" id="menu-toggle" class="hidden">
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-gray-950 border-b border-gray-800 shadow-2xl lg:hidden animate-in fade-in slide-in-from-top-5">
+                <div class="flex flex-col p-6 space-y-4 text-center">
+                    <a href="#plans" class="text-lg font-medium text-gray-300 hover:text-white">Plans</a>
+                    <a href="#features" class="text-lg font-medium text-gray-300 hover:text-white">Features</a>
+                    <a href="#roadmap" class="text-lg font-medium text-gray-300 hover:text-white">Roadmap</a>
+                    <a href="#portfolio" class="text-lg font-medium text-gray-300 hover:text-white">Portfolio</a>
+                    <a href="#vision" class="text-lg font-medium text-gray-300 hover:text-white">Philosophy</a>
+                    <a href="#about" class="text-lg font-medium text-gray-300 hover:text-white">About</a>
+                    <a href="#contact" class="text-lg font-medium text-gray-300 hover:text-white">Contact</a>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="block sm:hidden bg-indigo-600 text-white font-bold py-3 rounded-xl mt-4">Book A Call</a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -435,7 +467,7 @@
             </div>
 
             <div class="grid lg:grid-cols-2 gap-10">
-                <div class="bg-gray-900 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl">
+                <div class="bg-gray-950 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl">
                     <div class="p-6 border-b border-gray-800">
                         <p class="uppercase tracking-[0.15em] text-indigo-400 text-sm font-semibold mb-2">Episode 1</p>
                         <h3 class="text-2xl font-bold text-white">Empowerment Protocol</h3>
@@ -446,7 +478,7 @@
                     </video>
                 </div>
 
-                <div class="bg-gray-900 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl">
+                <div class="bg-gray-950 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl">
                     <div class="p-6 border-b border-gray-800">
                         <p class="uppercase tracking-[0.15em] text-indigo-400 text-sm font-semibold mb-2">Episode 2</p>
                         <h3 class="text-2xl font-bold text-white">The Human OS</h3>
@@ -457,7 +489,7 @@
                     </video>
                 </div>
 
-                <div class="bg-gray-900 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl">
+                <div class="bg-gray-950 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl">
                     <div class="p-6 border-b border-gray-800">
                         <p class="uppercase tracking-[0.15em] text-indigo-400 text-sm font-semibold mb-2">Episode 3</p>
                         <h3 class="text-2xl font-bold text-white">The Quiet Sync</h3>
@@ -468,7 +500,7 @@
                     </video>
                 </div>
 
-                <div class="bg-gray-900 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl">
+                <div class="bg-gray-950 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl">
                     <div class="p-6 border-b border-gray-800">
                         <p class="uppercase tracking-[0.15em] text-indigo-400 text-sm font-semibold mb-2">Episode 4</p>
                         <h3 class="text-2xl font-bold text-white">Defining The New State</h3>
@@ -570,7 +602,7 @@
         </div>
     </section>
 
-    <footer class="py-8 bg-gray-900 px-4 border-t border-gray-800 text-center text-gray-600 text-sm">
+    <footer class="py-8 bg-gray-950 px-4 border-t border-gray-800 text-center text-gray-600 text-sm">
         <p>&copy; 2026 Nuel Digital Assets Management. All Rights Reserved.</p>
         <p class="mt-1">Build. Secure. Monetize. Simple Business, Simplified Life.</p>
     </footer>
