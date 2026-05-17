@@ -32,6 +32,14 @@
         #menu-toggle:checked ~ #mobile-menu {
             display: block;
         }
+
+        /* Slideshow Animation */
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+        .slide { display: none; animation: fade 1.5s; }
+        .active-slide { display: block; }
     </style>
 </head> 
 <body class="bg-gray-950 text-gray-100 font-sans">
@@ -385,12 +393,20 @@
                 <h2 class="text-4xl font-extrabold text-white">Empowering the Future Through Tech</h2>
             </div>
             <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 shadow-2xl flex flex-col md:flex-row gap-10 items-center">
-                <div class="md:w-1/3 flex-shrink-0">
-                    <img src="https://customer-assets.emergentagent.com/wingman/ef56e783-8a0a-47b1-b81e-177bb068023e/attachments/53df701c535845c4ab07c38ad912c0a7_founder_photo.jpg" 
-                         alt="Emmanuel Modi - Founder of Nuel Digital Assets Management"
-                         class="w-full aspect-[3/4] object-cover rounded-2xl border border-gray-700 shadow-xl">
+                <div class="md:w-1/2 flex-shrink-0">
+                    <!-- Slideshow Container -->
+                    <div class="relative w-full aspect-[3/4] overflow-hidden rounded-2xl border border-gray-700 shadow-xl">
+                        <img src="https://customer-assets.emergentagent.com/wingman/ef56e783-8a0a-47b1-b81e-177bb068023e/attachments/53df701c535845c4ab07c38ad912c0a7_founder_photo.jpg" 
+                             class="slide active-slide w-full h-full object-cover" alt="Emmanuel Modi Photo 1">
+                        <img src="https://customer-assets.emergentagent.com/wingman/ef56e783-8a0a-47b1-b81e-177bb068023e/attachments/c6a166e72b5d418da58f0dc6c34d5f2d_photo1.jpg" 
+                             class="slide w-full h-full object-cover" alt="Emmanuel Modi Photo 2">
+                        <img src="https://customer-assets.emergentagent.com/wingman/ef56e783-8a0a-47b1-b81e-177bb068023e/attachments/f66037936da5424aa4d02887b4c475f6_photo2.jpg" 
+                             class="slide w-full h-full object-cover" alt="Emmanuel Modi Photo 3">
+                        <img src="https://customer-assets.emergentagent.com/wingman/ef56e783-8a0a-47b1-b81e-177bb068023e/attachments/65a5cfc391bd4e9da7270c56b654b358_photo3.jpg" 
+                             class="slide w-full h-full object-cover" alt="Emmanuel Modi Photo 4">
+                    </div>
                 </div>
-                <div class="md:w-2/3">
+                <div class="md:w-1/2">
                     <h3 class="text-3xl font-bold text-white mb-6">Emmanuel Modi</h3>
                     <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
                         <p>I am an entrepreneur, a student, and a lifelong technologist dedicated to building the future of digital ecosystems. My journey in tech began with a natural aptitude for solving complex computer issues—a skill I've always viewed as a God-given gift.</p>
@@ -602,10 +618,28 @@
         </div>
     </section>
 
-    <footer class="py-8 bg-gray-950 px-4 border-t border-gray-800 text-center text-gray-600 text-sm">
+    <footer class="py-8 bg-gray-900 px-4 border-t border-gray-800 text-center text-gray-600 text-sm">
         <p>&copy; 2026 Nuel Digital Assets Management. All Rights Reserved.</p>
         <p class="mt-1">Build. Secure. Monetize. Simple Business, Simplified Life.</p>
     </footer>
+
+    <script>
+        // Slideshow Logic
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlides() {
+            slides.forEach(slide => slide.classList.remove("active-slide"));
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].classList.add("active-slide");
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        if (slides.length > 0) {
+            showSlides();
+        }
+    </script>
 
 </body>
 </html>
