@@ -30,18 +30,6 @@
                 <a href="about.html" class="hover:text-white transition">About</a>
                 <a href="index.html#contact" class="hover:text-white transition">Contact</a>
             </div>
-
-<!-- JavaScript to power the mobile toggle dropdown -->
-<script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-</script>
     
             <!-- CTA / Contact Button (Desktop) -->
             <div class="hidden lg:flex items-center">
@@ -64,19 +52,18 @@
     <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-6 space-y-3 bg-gray-950 border-b border-gray-800">
         <a href="index.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Home</a>
-        <a href="#plans" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Plans</a>
-        <a href="#features" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Features</a>
-        <a href="#roadmap" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Roadmap</a>
+        <a href="index.html#plans" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Plans</a>
+        <a href="index.html#features" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Features</a>
+        <a href="index.html#roadmap" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Roadmap</a>
         <a href="portfolio.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Portfolio</a>
         <a href="philosophy.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Philosophy</a>
         <a href="about.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">About</a>
-        <a href="#contact" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Contact</a>
+        <a href="index.html#contact" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Contact</a>
         <a href="https://digital.nuelpropertyservices.com" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg mt-4">
             Get in Touch
         </a>
     </div>
 </nav>
-    
 
     <!-- Header / Hero Intro Section -->
     <section class="py-20 bg-gray-900 border-b border-gray-800 px-4">
@@ -173,9 +160,11 @@
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
     </script>
 </body>
 </html>
