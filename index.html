@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Mobile Hamburger Logic */
+        /* Hamburger Logic */
         #menu-toggle:checked ~ #mobile-menu {
             display: block !important;
         }
@@ -40,6 +40,7 @@
 
     <script>
       var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
       (function() {
@@ -54,7 +55,7 @@
   
 <body class="bg-gray-950 text-gray-100 font-sans">
 
-    <!-- FIXED STICKY NAVIGATION BAR -->
+    <!-- NAVIGATION -->
     <nav class="bg-gray-900/90 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between relative">
             <div class="flex items-center space-x-3">
@@ -84,7 +85,6 @@
                 <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg transition shadow-lg transform hover:scale-105">
                     Book A Call
                 </a>
-                
                 <label for="menu-toggle" class="lg:hidden cursor-pointer p-2 text-gray-300 hover:text-white">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -126,10 +126,9 @@
         </div>
     </header>
 
-    <!-- PHILOSOPHY / STORY SECTION (ADDED id="vision") -->
-    <section id="vision" class="py-28 bg-gray-950 px-4 border-t border-gray-800">
+    <!-- STORY SECTION -->
+    <section class="py-28 bg-gray-950 px-4 border-t border-gray-800">
         <div class="max-w-5xl mx-auto text-center">
-            <p class="text-indigo-400 font-semibold uppercase tracking-wider mb-2">Our Philosophy</p>
             <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">The Story Behind the System</h2>
             <p class="text-xl text-gray-300 leading-relaxed mb-8">
                 I am Emmanuel Modi, author of <span class="text-indigo-400 font-semibold">Sudan Fire USA Ice</span>.
@@ -172,7 +171,7 @@
         </div>
     </section>
 
-    <!-- FEATURES SECTION -->
+    <!-- FEATURES / CORE SERVICES -->
     <section id="features" class="py-32 bg-gray-950 px-4">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-center text-4xl font-extrabold text-white mb-16">The Nuel Digital Core</h2>
@@ -209,7 +208,6 @@
                 </div>
             </div>
 
-            <!-- TRUSTED PLATFORMS -->
             <div id="platforms" class="pt-16 border-t border-gray-800 text-center">
                 <p class="text-indigo-400 font-semibold mb-3">Trusted Platforms & Infrastructure</p>
                 <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Built With Industry-Standard Technology</h2>
@@ -242,12 +240,12 @@
         </div>
     </section>
 
-    <!-- WHY CHOOSE US / ABOUT SECTION (ADDED id="about") -->
-    <section id="about" class="py-32 bg-gray-900 px-4">
+    <!-- WHY CHOOSE -->
+    <section id="why-choose" class="py-32 bg-gray-900 px-4">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Why Choose Nuel Digital?</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">We aren't just an agency; we're your dedicated digital growth partners. We build the engine so you can drive the vision.</p>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">We aren't just an agency; we're your dedicated digital growth partners. We build the engine so you can drive the car.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-gray-950 p-8 rounded-2xl border border-gray-800 flex items-start space-x-5">
@@ -298,8 +296,8 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO / PROOF SECTION (ADDED id="portfolio") -->
-    <section id="portfolio" class="py-24 bg-gray-950 px-4 border-t border-gray-800">
+    <!-- PROOF & RESULTS -->
+    <section id="proof" class="py-24 bg-gray-950 px-4 border-t border-gray-800">
         <div class="max-w-6xl mx-auto text-center">
             <p class="text-indigo-400 font-semibold mb-2">Proof & Results</p>
             <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
@@ -328,7 +326,7 @@
         </div>
     </section>
 
-    <!-- CERTIFICATIONS SECTION -->
+    <!-- COURSERA CERTIFICATIONS SECTION -->
     <section id="certifications" class="py-24 bg-gray-900 px-4 border-t border-gray-800">
         <div class="max-w-7xl mx-auto text-center">
             <p class="text-indigo-400 font-semibold mb-2">Verified Technical Skills</p>
@@ -339,7 +337,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                 
-                <!-- Main Professional Certificate -->
+                <!-- 1. Main Professional Certificate -->
                 <div class="bg-gray-950 border border-indigo-500/50 rounded-3xl p-8 hover:border-indigo-500 transition duration-300 flex flex-col justify-between shadow-xl md:col-span-2 lg:col-span-3">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
@@ -361,10 +359,12 @@
                     </a>
                 </div>
 
-                <!-- Individual Badges -->
+                <!-- 2. Technical Support Fundamentals -->
                 <div class="bg-gray-950 border border-gray-800 rounded-3xl p-8 hover:border-indigo-500 transition duration-300 flex flex-col justify-between shadow-xl">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">🛠️</div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">
+                            🛠️
+                        </div>
                         <h3 class="text-xl font-bold text-white mb-2">Technical Support Fundamentals</h3>
                         <p class="text-indigo-400 text-sm font-semibold mb-4">Coursera / Google</p>
                         <p class="text-gray-400 text-sm leading-relaxed mb-6">
@@ -376,13 +376,16 @@
                     </a>
                 </div>
 
+                <!-- 3. The Bits and Bytes of Computer Networking -->
                 <div class="bg-gray-950 border border-gray-800 rounded-3xl p-8 hover:border-indigo-500 transition duration-300 flex flex-col justify-between shadow-xl">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">🌐</div>
-                        <h3 class="text-xl font-bold text-white mb-2">The Bits and Bytes of Networking</h3>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">
+                            🌐
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">The Bits and Bytes of Computer Networking</h3>
                         <p class="text-indigo-400 text-sm font-semibold mb-4">Coursera / Google</p>
                         <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            In-depth understanding of modern networking technologies, TCP/IP protocols, DNS, DHCP, and network connectivity.
+                            In-depth understanding of modern networking technologies, TCP/IP protocols, DNS, DHCP, and troubleshooting network connectivity issues.
                         </p>
                     </div>
                     <a href="https://coursera.org/verify/professional-cert/EH7C8V5ME9XP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-bold text-indigo-400 hover:text-indigo-300">
@@ -390,13 +393,16 @@
                     </a>
                 </div>
 
+                <!-- 4. Operating Systems and You -->
                 <div class="bg-gray-950 border border-gray-800 rounded-3xl p-8 hover:border-indigo-500 transition duration-300 flex flex-col justify-between shadow-xl">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">💻</div>
-                        <h3 class="text-xl font-bold text-white mb-2">Operating Systems Power User</h3>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">
+                            💻
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Operating Systems and You: Becoming a Power User</h3>
                         <p class="text-indigo-400 text-sm font-semibold mb-4">Coursera / Google</p>
                         <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Advanced navigation and administration of Windows and Linux operating systems, user management, and shell scripting.
+                            Advanced navigation and administration of Windows and Linux operating systems, user management, and shell scripting basics.
                         </p>
                     </div>
                     <a href="https://coursera.org/verify/professional-cert/EH7C8V5ME9XP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-bold text-indigo-400 hover:text-indigo-300">
@@ -404,13 +410,16 @@
                     </a>
                 </div>
 
+                <!-- 5. System Administration -->
                 <div class="bg-gray-950 border border-gray-800 rounded-3xl p-8 hover:border-indigo-500 transition duration-300 flex flex-col justify-between shadow-xl">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">🖥️</div>
-                        <h3 class="text-xl font-bold text-white mb-2">System Administration & IT</h3>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">
+                            🖥️
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">System Administration & IT Infrastructure</h3>
                         <p class="text-indigo-400 text-sm font-semibold mb-4">Coursera / Google</p>
                         <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Managing infrastructure, Active Directory, cloud services, directory services, data backup, and enterprise systems.
+                            Managing infrastructure, Active Directory, cloud services, directory services, data backup, and enterprise environment maintenance.
                         </p>
                     </div>
                     <a href="https://coursera.org/verify/professional-cert/EH7C8V5ME9XP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-bold text-indigo-400 hover:text-indigo-300">
@@ -418,13 +427,33 @@
                     </a>
                 </div>
 
+                <!-- 6. IT Security -->
                 <div class="bg-gray-950 border border-gray-800 rounded-3xl p-8 hover:border-indigo-500 transition duration-300 flex flex-col justify-between shadow-xl">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">🔒</div>
-                        <h3 class="text-xl font-bold text-white mb-2">IT Security & Defense</h3>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">
+                            🔒
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">IT Security: Defense Against the Digital Dark Arts</h3>
                         <p class="text-indigo-400 text-sm font-semibold mb-4">Coursera / Google</p>
                         <p class="text-gray-400 text-sm leading-relaxed mb-6">
                             Encryption algorithms, authentication systems, network security protocols, firewalls, and threat mitigation strategies.
+                        </p>
+                    </div>
+                    <a href="https://coursera.org/verify/professional-cert/EH7C8V5ME9XP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-bold text-indigo-400 hover:text-indigo-300">
+                        Verify Badge →
+                    </a>
+                </div>
+
+                <!-- 7. AI Job Search -->
+                <div class="bg-gray-950 border border-gray-800 rounded-3xl p-8 hover:border-indigo-500 transition duration-300 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl mb-4">
+                            🚀
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Accelerate Your Job Search with AI</h3>
+                        <p class="text-indigo-400 text-sm font-semibold mb-4">Coursera / Google</p>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Leveraging artificial intelligence tools and prompt engineering to optimize technical workflows, productivity, and career development.
                         </p>
                     </div>
                     <a href="https://coursera.org/verify/professional-cert/EH7C8V5ME9XP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-bold text-indigo-400 hover:text-indigo-300">
@@ -436,7 +465,7 @@
         </div>
     </section>
 
-    <!-- ROADMAP SECTION -->
+    <!-- ROADMAP / PROCESS -->
     <section id="roadmap" class="py-32 bg-gray-950 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -452,45 +481,187 @@
                 <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 relative pt-14">
                     <div class="absolute -top-6 left-10 w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-2xl font-black text-white shadow-xl">2</div>
                     <h3 class="text-2xl font-bold text-white mb-4">Build & Deploy</h3>
-                    <p class="text-gray-400 leading-relaxed">We engineer your high-converting website, setup SEO foundations, and integrate lead booking and automation tools.</p>
+                    <p class="text-gray-400 leading-relaxed">We engineer high-converting web infrastructure, connect CRMs, configure domain security, and set up your automated workflows.</p>
                 </div>
                 <div class="bg-gray-900 p-10 rounded-3xl border border-gray-800 relative pt-14">
                     <div class="absolute -top-6 left-10 w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-2xl font-black text-white shadow-xl">3</div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Scale & Manage</h3>
-                    <p class="text-gray-400 leading-relaxed">We take full ownership of keeping your platform fast, updated, and growing with continuous updates and management.</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">Manage & Scale</h3>
+                    <p class="text-gray-400 leading-relaxed">We continuously monitor, update, and optimize your digital assets so your systems scale smoothly alongside your revenue.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PLANS SECTION (ADDED id="plans") -->
-    <section id="plans" class="py-32 bg-gray-900 px-4 border-t border-gray-800 text-center">
-        <div class="max-w-5xl mx-auto">
-            <p class="text-indigo-400 font-semibold uppercase tracking-wider mb-2">Flexible Packages</p>
-            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Service Plans</h2>
-            <p class="text-gray-400 text-lg mb-12">Tailored digital management packages designed to handle your technical ecosystem end-to-end.</p>
-            <div class="bg-gray-950 border border-gray-800 p-10 rounded-3xl max-w-2xl mx-auto">
-                <h3 class="text-2xl font-bold text-white mb-4">Custom Digital Ecosystem Management</h3>
-                <p class="text-gray-400 mb-8">From web builds to CRM automation and SEO optimization, we structure customized retainers suited to your growth velocity.</p>
-                <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-4 rounded-xl transition inline-block">Book a Call for Pricing</a>
+    <!-- PLANS & PRICING -->
+    <section id="plans" class="py-32 bg-gray-900 px-4 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-indigo-400 font-semibold mb-2">Flexible Service Options</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Choose Your Growth Plan</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Tailored solutions built to fit your business size, budget, and growth velocity.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Plan 1 -->
+                <div class="bg-gray-950 border border-gray-800 rounded-3xl p-8 flex flex-col justify-between hover:border-gray-700 transition">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Starter System</h3>
+                        <p class="text-gray-400 text-sm mb-6">Perfect for small local businesses & standalone creators setting up an online core.</p>
+                        <div class="text-4xl font-extrabold text-white mb-6">$499 <span class="text-base font-normal text-gray-400">/ setup</span></div>
+                        <ul class="text-gray-300 space-y-3 text-sm mb-8">
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> High-conversion landing page</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Google Business Profile setup</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Basic SEO foundations</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Contact form integration</li>
+                        </ul>
+                    </div>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="w-full text-center bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 rounded-xl transition">Select Starter</a>
+                </div>
+
+                <!-- Plan 2 (Highlighted) -->
+                <div class="bg-gray-950 border-2 border-indigo-500 rounded-3xl p-8 flex flex-col justify-between relative shadow-2xl transform lg:-translate-y-2">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full">Most Popular</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Full Growth Engine</h3>
+                        <p class="text-gray-400 text-sm mb-6">Complete end-to-end digital ecosystem for scaling businesses and media brands.</p>
+                        <div class="text-4xl font-extrabold text-white mb-6">$1,299 <span class="text-base font-normal text-gray-400">/ setup</span></div>
+                        <ul class="text-gray-300 space-y-3 text-sm mb-8">
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Custom multi-page web architecture</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Full CRM & Booking Funnel Setup</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Advanced Local SEO & Google Optimization</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Social Media Integration (up to 3 platforms)</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Analytics & Matomo Tracking Setup</li>
+                        </ul>
+                    </div>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl transition">Launch Full Engine</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="bg-gray-950 border border-gray-800 rounded-3xl p-8 flex flex-col justify-between hover:border-gray-700 transition">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Custom Asset Mgmt</h3>
+                        <p class="text-gray-400 text-sm mb-6">Ongoing management, technical upkeep, and content expansion for enterprise clients.</p>
+                        <div class="text-4xl font-extrabold text-white mb-6">Custom <span class="text-base font-normal text-gray-400">/ monthly</span></div>
+                        <ul class="text-gray-300 space-y-3 text-sm mb-8">
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Biweekly site content & design updates</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> 24/7 Server, DNS & Domain Maintenance</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> E-commerce / Shopify Partner Management</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Priority Support & Direct Strategy Access</li>
+                        </ul>
+                    </div>
+                    <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="w-full text-center bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 rounded-xl transition">Contact For Quote</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION (ADDED id="contact") -->
-    <section id="contact" class="py-32 bg-gray-950 px-4 border-t border-gray-800 text-center">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-indigo-400 font-semibold uppercase tracking-wider mb-2">Get In Touch</p>
-            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Let's Build Your Digital Presence</h2>
-            <p class="text-gray-400 text-lg mb-10">Ready to streamline your tech, automate customer conversion, and elevate your brand?</p>
-            <a href="https://meetings-na2.hubspot.com/emmanuel-modi" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg px-10 py-4 rounded-xl transition inline-block shadow-xl">
-                Schedule Your Strategy Session
-            </a>
+    <!-- PORTFOLIO / HOUSE OF BRANDS -->
+    <section id="portfolio" class="py-32 bg-gray-950 px-4 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-indigo-400 font-semibold mb-2">Nuel Ecosystem</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Our House of Brands</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Projects and brand assets engineered under the Nuel umbrella.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-indigo-500/50 transition">
+                    <h3 class="text-2xl font-bold text-white mb-2">Nuel Property Services</h3>
+                    <p class="text-indigo-400 text-xs font-semibold mb-4">Real Estate & Property Management</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Streamlined physical and digital operational solutions for local property management and housing initiatives.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-indigo-500/50 transition">
+                    <h3 class="text-2xl font-bold text-white mb-2">Nuel Digital</h3>
+                    <p class="text-indigo-400 text-xs font-semibold mb-4">Digital Assets & Tech Infrastructure</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        The core tech engine managing websites, automation, analytics, and software integration for businesses.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-indigo-500/50 transition">
+                    <h3 class="text-2xl font-bold text-white mb-2">The Rap Lyric Breakdown</h3>
+                    <p class="text-indigo-400 text-xs font-semibold mb-4">Media & Content Brand</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        An educational digital media asset breaking down the logic, structure, and underlying themes in hip-hop lyrics.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="bg-gray-950 py-8 text-center text-gray-500 border-t border-gray-900 text-sm">
-        <p>© 2026 Nuel Digital Assets Management. All rights reserved.</p>
+    <!-- PHILOSOPHY / VISION -->
+    <section id="vision" class="py-32 bg-gray-900 px-4 border-t border-gray-800">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-indigo-400 font-semibold mb-2">Our Core Philosophy</p>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-8">Lean. Operating Outside Limits.</h2>
+            <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8">
+                We don't build clunky, high-friction systems. We build lean, high-velocity digital architectures designed to handle immense workload without task overwhelm.
+            </p>
+            <blockquote class="bg-gray-950 border-l-4 border-indigo-500 p-6 rounded-r-2xl text-left max-w-2xl mx-auto text-gray-400 italic">
+                "Comparing our operational framework to a standard business is like comparing an alien ship to a regular car—it operates outside conventional limits to deliver maximum performance with minimal bloat."
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-32 bg-gray-950 px-4 border-t border-gray-800">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">About Nuel Digital Assets Management</h2>
+            <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                Founded by Emmanuel Modi, Nuel Digital was built on a simple principle: technical systems should serve business goals, not create friction.
+            </p>
+            <p class="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
+                With verified qualifications in IT Support, Network Infrastructure, System Administration, and Security, we deliver agency-grade execution backed by genuine technical fundamentals.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section id="contact" class="py-32 bg-gray-900 px-4 border-t border-gray-800">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <p class="text-indigo-400 font-semibold mb-2">Let's Connect</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Start Building Your System</h2>
+                <p class="text-gray-400">Send us a message and we'll discuss how to structure your digital assets for growth.</p>
+            </div>
+
+            <form action="https://formspree.io/f/xqaaabyq" method="POST" class="bg-gray-950 p-8 sm:p-12 rounded-3xl border border-gray-800 space-y-6 shadow-2xl">
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Your Name</label>
+                    <input type="text" id="name" name="name" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Your Email</label>
+                    <input type="email" id="email" name="email" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">Project Details or Inquiry</label>
+                    <textarea id="message" name="message" rows="5" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 py-12 px-4 border-t border-gray-900 text-center text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <img src="nuellogo.png" alt="Nuel Logo" class="h-6 w-6 object-contain">
+                <span class="text-gray-300 font-bold">Nuel Digital Assets Management</span>
+            </div>
+            <p>© 2026 Nuel Business Groups. All rights reserved.</p>
+            <div class="flex space-x-6 text-gray-400 text-xs">
+                <a href="#plans" class="hover:text-white transition">Plans</a>
+                <a href="#certifications" class="hover:text-white transition">Credentials</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
     </footer>
 
 </body>
