@@ -1,9 +1,9 @@
 <!-- NAVIGATION BAR -->
-<nav style="position: sticky; top: 0; z-index: 100; background-color: rgba(11, 15, 25, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(31, 41, 55, 0.8);">
+<nav style="position: sticky; top: 0; z-index: 1000; background-color: #0B0F19; border-bottom: 1px solid rgba(31, 41, 55, 0.8); width: 100%;">
     <div style="max-width: 80rem; margin-left: auto; margin-right: auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between;">
         
         <!-- Logo / Brand -->
-        <a href="#" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;"> 
+        <a href="#" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
             <div style="width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, #4f46e5, #9333ea); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.25rem; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);">
                 N
             </div>
@@ -14,30 +14,30 @@
         </a>
 
         <!-- Desktop Navigation Links -->
-        <div style="display: none; align-items: center; gap: 2rem;" class="md-flex">
-            <a href="#about" style="color: #d1d5db; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#818cf8'" onmouseout="this.style.color='#d1d5db'">About</a>
-            <a href="#casestudy" style="color: #d1d5db; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#818cf8'" onmouseout="this.style.color='#d1d5db'">Case Studies</a>
-            <a href="#certifications" style="color: #d1d5db; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#818cf8'" onmouseout="this.style.color='#d1d5db'">Certifications</a>
+        <div style="display: none; align-items: center; gap: 2rem;" id="desktop-menu">
+            <a href="#about" style="color: #d1d5db; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 0.2s;">About</a>
+            <a href="#casestudy" style="color: #d1d5db; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 0.2s;">Case Studies</a>
+            <a href="#certifications" style="color: #d1d5db; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 0.2s;">Certifications</a>
         </div>
 
-        <!-- Action Button -->
-        <div style="display: none; align-items: center; gap: 1rem;" class="md-flex">
-            <a href="#casestudy" style="padding: 0.5rem 1.25rem; background-color: #4f46e5; color: white; font-size: 0.875rem; font-weight: 700; border-radius: 0.75rem; text-decoration: none; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4); transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#4338ca'" onmouseout="this.style.backgroundColor='#4f46e5'">
+        <!-- Desktop Action Button -->
+        <div style="display: none; align-items: center; gap: 1rem;" id="desktop-btn">
+            <a href="#casestudy" style="padding: 0.5rem 1.25rem; background-color: #4f46e5; color: white; font-size: 0.875rem; font-weight: 700; border-radius: 0.75rem; text-decoration: none; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);">
                 Explore Plans
             </a>
         </div>
 
         <!-- Mobile Menu Toggle Button -->
-        <button id="menu-btn" onclick="toggleMobileMenu()" style="display: flex; flex-direction: column; justify-content: space-between; width: 1.75rem; height: 1.25rem; background: transparent; border: none; cursor: pointer; padding: 0;" class="md-hidden" aria-label="Toggle Menu">
-            <span style="width: 100%; height: 2px; background-color: white; border-radius: 2px; transition: 0.3s;"></span>
-            <span style="width: 100%; height: 2px; background-color: white; border-radius: 2px; transition: 0.3s;"></span>
-            <span style="width: 100%; height: 2px; background-color: white; border-radius: 2px; transition: 0.3s;"></span>
+        <button id="menu-btn" onclick="toggleMobileMenu()" style="display: flex; flex-direction: column; justify-content: space-between; width: 1.75rem; height: 1.25rem; background: transparent; border: none; cursor: pointer; padding: 0;" aria-label="Toggle Menu">
+            <span style="width: 100%; height: 2px; background-color: white; border-radius: 2px;"></span>
+            <span style="width: 100%; height: 2px; background-color: white; border-radius: 2px;"></span>
+            <span style="width: 100%; height: 2px; background-color: white; border-radius: 2px;"></span>
         </button>
 
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" style="display: none; flex-direction: column; background-color: #0B0F19; border-bottom: 1px solid rgba(31, 41, 55, 0.8); padding: 1.5rem; gap: 1rem;" class="md-hidden">
+    <!-- Mobile Dropdown Menu (Initially hidden using display: none) -->
+    <div id="mobile-menu" style="display: none; flex-direction: column; background-color: #0B0F19; border-bottom: 1px solid rgba(31, 41, 55, 0.8); padding: 1.5rem; gap: 1rem;">
         <a href="#about" onclick="toggleMobileMenu()" style="color: #d1d5db; font-size: 1rem; font-weight: 600; text-decoration: none; padding: 0.5rem 0;">About</a>
         <a href="#casestudy" onclick="toggleMobileMenu()" style="color: #d1d5db; font-size: 1rem; font-weight: 600; text-decoration: none; padding: 0.5rem 0;">Case Studies</a>
         <a href="#certifications" onclick="toggleMobileMenu()" style="color: #d1d5db; font-size: 1rem; font-weight: 600; text-decoration: none; padding: 0.5rem 0;">Certifications</a>
@@ -49,7 +49,16 @@
     </div>
 </nav>
 
-<!-- JavaScript for Functional Navbar -->
+<!-- Responsive Layout Fixes & Script -->
+<style>
+    @media (min-width: 768px) {
+        #desktop-menu { display: flex !important; }
+        #desktop-btn { display: flex !important; }
+        #menu-btn { display: none !important; }
+        #mobile-menu { display: none !important; }
+    }
+</style>
+
 <script>
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
