@@ -1,71 +1,155 @@
-<!-- NAVIGATION BAR -->
-<nav style="position: sticky; top: 0; z-index: 1000; background-color: #0B0F19; border-bottom: 1px solid rgba(31, 41, 55, 0.8); width: 100%;">
-    <div style="max-width: 80rem; margin-left: auto; margin-right: auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between;">
-        
-        <!-- Logo / Brand -->
-        <a href="#" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
-            <div style="width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, #4f46e5, #9333ea); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.25rem; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);">
-                N
-            </div>
-            <div style="display: flex; flex-direction: column;">
-                <span style="font-size: 1.125rem; font-weight: 800; color: #ffffff; letter-spacing: -0.025em; line-height: 1.2;">NUEL DIGITAL</span>
-                <span style="font-size: 0.65rem; color: #818cf8; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">Ecosystems</span>
-            </div>
-        </a>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Assets Portfolio - Nuel Business Groups</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased">
 
-        <!-- Desktop Navigation Links -->
-        <div style="display: none; align-items: center; gap: 2rem;" id="desktop-menu">
-            <a href="#about" style="color: #d1d5db; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 0.2s;">About</a>
-            <a href="#casestudy" style="color: #d1d5db; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 0.2s;">Case Studies</a>
-            <a href="#certifications" style="color: #d1d5db; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 0.2s;">Certifications</a>
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Brand -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-extrabold text-white tracking-wider">
+                        NUEL <span class="text-indigo-400">GROUPS</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-300 hover:text-indigo-400 transition-colors font-medium">Home</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-indigo-400 transition-colors font-medium">Portfolio</a>
+                    <a href="https://digital.nuelpropertyservices.com" class="text-gray-300 hover:text-indigo-400 transition-colors font-medium">Services</a>
+                    <a href="https://digital.nuelpropertyservices.com" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-indigo-600/20">
+                        Get in Touch
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" type="button" class="text-gray-400 hover:text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <!-- Desktop Action Button -->
-        <div style="display: none; align-items: center; gap: 1rem;" id="desktop-btn">
-            <a href="#casestudy" style="padding: 0.5rem 1.25rem; background-color: #4f46e5; color: white; font-size: 0.875rem; font-weight: 700; border-radius: 0.75rem; text-decoration: none; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);">
-                Explore Plans
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 space-y-3 bg-gray-950 border-b border-gray-800">
+            <a href="#" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Home</a>
+            <a href="#portfolio" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Portfolio</a>
+            <a href="https://digital.nuelpropertyservices.com" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Services</a>
+            <a href="https://digital.nuelpropertyservices.com" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg">
+                Get in Touch
             </a>
         </div>
+    </nav>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button id="menu-btn" onclick="toggleMobileMenu()" style="display: flex; flex-direction: column; justify-content: space-between; width: 1.75rem; height: 1.25rem; background: transparent; border: none; cursor: pointer; padding: 0;" aria-label="Toggle Menu">
-            <span style="width: 100%; height: 2px; background-color: white; border-radius: 2px;"></span>
-            <span style="width: 100%; height: 2px; background-color: white; border-radius: 2px;"></span>
-            <span style="width: 100%; height: 2px; background-color: white; border-radius: 2px;"></span>
-        </button>
-
-    </div>
-
-    <!-- Mobile Dropdown Menu (Initially hidden using display: none) -->
-    <div id="mobile-menu" style="display: none; flex-direction: column; background-color: #0B0F19; border-bottom: 1px solid rgba(31, 41, 55, 0.8); padding: 1.5rem; gap: 1rem;">
-        <a href="#about" onclick="toggleMobileMenu()" style="color: #d1d5db; font-size: 1rem; font-weight: 600; text-decoration: none; padding: 0.5rem 0;">About</a>
-        <a href="#casestudy" onclick="toggleMobileMenu()" style="color: #d1d5db; font-size: 1rem; font-weight: 600; text-decoration: none; padding: 0.5rem 0;">Case Studies</a>
-        <a href="#certifications" onclick="toggleMobileMenu()" style="color: #d1d5db; font-size: 1rem; font-weight: 600; text-decoration: none; padding: 0.5rem 0;">Certifications</a>
-        <div style="padding-top: 0.5rem; border-top: 1px solid rgba(31, 41, 55, 0.8);">
-            <a href="#casestudy" onclick="toggleMobileMenu()" style="display: block; text-align: center; padding: 0.75rem; background-color: #4f46e5; color: white; font-weight: 700; border-radius: 0.75rem; text-decoration: none;">
-                Explore Plans
-            </a>
+    <!-- Header / Hero Intro Section -->
+    <section class="py-20 bg-gray-900 border-b border-gray-800 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-indigo-400 font-semibold mb-2 tracking-wide uppercase text-sm">
+                Our Work
+            </p>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+                Digital Assets Portfolio
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Explore websites, platforms, and digital systems created under Nuel Business Groups.
+            </p>
         </div>
-    </div>
-</nav>
+    </section>
 
-<!-- Responsive Layout Fixes & Script -->
-<style>
-    @media (min-width: 768px) {
-        #desktop-menu { display: flex !important; }
-        #desktop-btn { display: flex !important; }
-        #menu-btn { display: none !important; }
-        #mobile-menu { display: none !important; }
-    }
-</style>
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="py-24 bg-gray-900 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-indigo-400 font-semibold mb-2 uppercase text-sm">Our Portfolio</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white">Featured Platforms</h2>
+                <p class="text-lg text-gray-400 mt-4 max-w-3xl mx-auto">A collection of professional platforms built, deployed, and managed by Nuel Business Groups.</p>
+            </div>
 
-<script>
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        if (menu.style.display === 'flex') {
-            menu.style.display = 'none';
-        } else {
-            menu.style.display = 'flex';
-        }
-    }
-</script>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Nuel Property Services -->
+                <a href="https://www.nuelpropertyservices.com" target="_blank" rel="noopener noreferrer" class="bg-gray-950 rounded-3xl border border-gray-800 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden shadow-2xl group flex flex-col p-8 h-full">
+                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Nuel Property Services</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">A robust WordPress-based service platform for professional cleaning and maintenance.</p>
+                    <span class="text-indigo-400 font-bold hover:text-indigo-300 flex items-center mt-auto">
+                        View Website 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Card 2: Nuel On-Demand -->
+                <a href="https://ondemand.nuelpropertyservices.com" target="_blank" rel="noopener noreferrer" class="bg-gray-950 rounded-3xl border border-gray-800 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden shadow-2xl group flex flex-col p-8 h-full">
+                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Nuel On-Demand</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">A high-tech storefront for industrial hardware and software solutions.</p>
+                    <span class="text-indigo-400 font-bold hover:text-indigo-300 flex items-center mt-auto">
+                        View Website 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Card 3: Shared Leadership Circle -->
+                <a href="https://lha.nuelpropertyservices.com" target="_blank" rel="noopener noreferrer" class="bg-gray-950 rounded-3xl border border-gray-800 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden shadow-2xl group flex flex-col p-8 h-full">
+                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Shared Leadership Circle</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">A community-driven platform focused on leadership development and empowerment.</p>
+                    <span class="text-indigo-400 font-bold hover:text-indigo-300 flex items-center mt-auto">
+                        View Website 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Card 4: Future Hoops Academy -->
+                <a href="https://lha.nuelpropertyservices.com" target="_blank" rel="noopener noreferrer" class="bg-gray-950 rounded-3xl border border-gray-800 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden shadow-2xl group flex flex-col p-8 h-full">
+                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Future Hoops Academy</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">A mentorship and athletic training platform for youth in Monrovia.</p>
+                    <span class="text-indigo-400 font-bold hover:text-indigo-300 flex items-center mt-auto">
+                        View Website 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Card 5: Nuel Digital Hub -->
+                <a href="https://digital.nuelpropertyservices.com" target="_blank" rel="noopener noreferrer" class="bg-gray-950 rounded-3xl border border-gray-800 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden shadow-2xl group flex flex-col p-8 h-full">
+                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Nuel Digital Hub</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">The central hub for Nuel Business Groups' digital asset management and agency services.</p>
+                    <span class="text-indigo-400 font-bold hover:text-indigo-300 flex items-center mt-auto">
+                        View Website 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Mobile Navigation Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
