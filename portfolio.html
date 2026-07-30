@@ -9,7 +9,7 @@
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans antialiased">
 <!-- Navigation Bar -->
-<nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+<nav class="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
             <!-- Logo / Brand -->
@@ -22,15 +22,63 @@
             <!-- Desktop Navigation Links -->
             <div class="hidden lg:flex items-center space-x-8 text-gray-300">
                 <a href="index.html" class="hover:text-white transition">Home</a>
-                <a href="#plans" class="hover:text-white transition">Plans</a>
-                <a href="#features" class="hover:text-white transition">Features</a>
-                <a href="#roadmap" class="hover:text-white transition">Roadmap</a>
+                <a href="index.html#plans" class="hover:text-white transition">Plans</a>
+                <a href="index.html#features" class="hover:text-white transition">Features</a>
+                <a href="index.html#roadmap" class="hover:text-white transition">Roadmap</a>
                 <a href="portfolio.html" class="hover:text-white transition">Portfolio</a>
                 <a href="philosophy.html" class="hover:text-white transition">Philosophy</a>
                 <a href="about.html" class="hover:text-white transition">About</a>
-                <a href="#contact" class="hover:text-white transition">Contact</a>
+                <a href="index.html#contact" class="hover:text-white transition">Contact</a>
             </div>
 
+            <!-- CTA / Contact Button (Desktop) -->
+            <div class="hidden lg:flex items-center">
+                <a href="https://digital.nuelpropertyservices.com" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-indigo-600/20">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden flex items-center">
+                <button id="menu-btn" type="button" class="text-gray-400 hover:text-white focus:outline-none p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden px-6 pt-4 pb-6 space-y-3 bg-gray-950 border-b border-gray-800">
+        <a href="index.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Home</a>
+        <a href="index.html#plans" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Plans</a>
+        <a href="index.html#features" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Features</a>
+        <a href="index.html#roadmap" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Roadmap</a>
+        <a href="portfolio.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Portfolio</a>
+        <a href="philosophy.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Philosophy</a>
+        <a href="about.html" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">About</a>
+        <a href="index.html#contact" class="block text-gray-300 hover:text-indigo-400 font-medium py-2">Contact</a>
+        <div class="pt-2">
+            <a href="https://digital.nuelpropertyservices.com" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-3 rounded-full font-semibold transition-all shadow-lg">
+                Get in Touch
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- JavaScript to power the mobile toggle dropdown -->
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+</script>
+    
             <!-- CTA / Contact Button (Desktop) -->
             <div class="hidden lg:flex items-center">
                 <a href="https://digital.nuelpropertyservices.com" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-indigo-600/20">
