@@ -40,7 +40,7 @@
             </p>
 
 
-            <div class="mt-8 grid md:grid-cols-3 gap-6">
+            <div class="mt-8 grid md:grid-cols-3 gap-6 text-left">
 
                 <div class="bg-[#1F2937] rounded-2xl p-6 border border-gray-800">
                     <h3 class="text-xl font-bold text-white mb-2">
@@ -81,188 +81,158 @@
 
 <section class="py-20 bg-[#111827]">
 
-<div class="max-w-3xl mx-auto px-6">
+<div class="max-w-4xl mx-auto px-6">
 
 <form action="https://formspree.io/f/YOUR_FORM_ID" 
 method="POST"
 enctype="multipart/form-data"
 class="space-y-6">
 
+<div class="grid md:grid-cols-3 gap-6">
+    <input 
+    type="text"
+    name="Full Name"
+    placeholder="Full Name"
+    required
+    class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
 
-<input 
-type="text"
-name="Full Name"
-placeholder="Full Name"
-required
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+    <input 
+    type="email"
+    name="Email"
+    placeholder="Email Address"
+    required
+    class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
 
+    <input 
+    type="tel"
+    name="Phone"
+    placeholder="Phone Number"
+    class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+</div>
 
-<input 
-type="email"
-name="Email"
-placeholder="Email Address"
-required
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+<div class="grid md:grid-cols-3 gap-6">
+    <div>
+        <label class="block text-white font-semibold mb-2">Position Applying For</label>
+        <select
+        name="Position Applying For"
+        required
+        class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+            <option value="">-- Select Position --</option>
+            <option>Digital Marketing Specialist</option>
+            <option>SEO Specialist</option>
+            <option>Google Business Profile Specialist</option>
+            <option>Social Media Manager</option>
+            <option>Graphic Designer</option>
+            <option>UI/UX Designer</option>
+            <option>Video Editor</option>
+            <option>Content Creator</option>
+            <option>Web Developer</option>
+            <option>WordPress Developer</option>
+            <option>Shopify Developer</option>
+            <option>Automation Specialist</option>
+            <option>Sales Representative</option>
+            <option>Business Development Representative</option>
+            <option>Appointment Setter</option>
+            <option>Customer Success Manager</option>
+            <option>Project Manager</option>
+            <option>Operations Coordinator</option>
+            <option>Virtual Assistant</option>
+            <option>Bookkeeper</option>
+            <option>IT Support Specialist</option>
+            <option>CRM Specialist</option>
+            <option>Systems Administrator</option>
+            <option>Independent Contractor</option>
+            <option>Internship</option>
+            <option>Volunteer</option>
+            <option>General Application</option>
+        </select>
+    </div>
 
+    <div>
+        <label class="block text-white font-semibold mb-2">Employment Type</label>
+        <select
+        name="Employment Type"
+        class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+            <option value="">-- Select Type --</option>
+            <option>Full-Time</option>
+            <option>Part-Time</option>
+            <option>Contract</option>
+            <option>Freelance</option>
+            <option>Internship</option>
+        </select>
+    </div>
 
-<input 
-type="tel"
-name="Phone"
-placeholder="Phone Number"
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+    <div>
+        <label class="block text-white font-semibold mb-2">Work Preference</label>
+        <select
+        name="Work Preference"
+        class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+            <option value="">-- Select Preference --</option>
+            <option>Remote</option>
+            <option>Hybrid</option>
+            <option>Flexible</option>
+        </select>
+    </div>
+</div>
 
+<div class="grid md:grid-cols-2 gap-6">
+    <div>
+        <label class="block text-white font-semibold mb-2">Years of Experience</label>
+        <input
+        type="text"
+        name="Years of Experience"
+        placeholder="e.g. 3 Years"
+        class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+    </div>
+    <div>
+        <label class="block text-white font-semibold mb-2">Available Start Date</label>
+        <input
+        type="date"
+        name="Available Start Date"
+        class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+    </div>
+</div>
 
+<div>
+    <label class="block text-white font-semibold mb-2">Experience Summary</label>
+    <textarea
+    name="Experience"
+    rows="6"
+    placeholder="Tell us about your experience..."
+    class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500"></textarea>
+</div>
 
-<label class="block text-white font-semibold">
-Position Applying For
-</label>
+<div class="grid md:grid-cols-2 gap-6">
+    <input
+    type="url"
+    name="LinkedIn Profile"
+    placeholder="LinkedIn Profile (Optional)"
+    class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
 
+    <input
+    type="url"
+    name="Portfolio Website"
+    placeholder="Portfolio or Website (Optional)"
+    class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+</div>
 
-<select
-name="Position Applying For"
-required
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
+<div>
+    <label class="block text-white font-semibold mb-2">Resume/CV Upload</label>
+    <input
+    type="file"
+    name="Resume"
+    accept=".pdf,.doc,.docx"
+    class="w-full p-3 rounded-xl bg-[#1F2937] text-gray-400 border border-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700">
+</div>
 
-
-<option value="">
--- Select Position --
-</option>
-
-
-<option>Digital Marketing Specialist</option>
-<option>SEO Specialist</option>
-<option>Google Business Profile Specialist</option>
-<option>Social Media Manager</option>
-
-<option>Graphic Designer</option>
-<option>UI/UX Designer</option>
-<option>Video Editor</option>
-<option>Content Creator</option>
-
-<option>Web Developer</option>
-<option>WordPress Developer</option>
-<option>Shopify Developer</option>
-<option>Automation Specialist</option>
-
-<option>Sales Representative</option>
-<option>Business Development Representative</option>
-<option>Appointment Setter</option>
-<option>Customer Success Manager</option>
-
-<option>Project Manager</option>
-<option>Operations Coordinator</option>
-<option>Virtual Assistant</option>
-<option>Bookkeeper</option>
-
-<option>IT Support Specialist</option>
-<option>CRM Specialist</option>
-<option>Systems Administrator</option>
-
-<option>Independent Contractor</option>
-<option>Internship</option>
-<option>Volunteer</option>
-<option>General Application</option>
-
-
-</select>
-
-
-
-<select
-name="Employment Type"
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
-
-<option>
-Employment Type
-</option>
-
-<option>Full-Time</option>
-<option>Part-Time</option>
-<option>Contract</option>
-<option>Freelance</option>
-<option>Internship</option>
-
-</select>
-
-
-
-<select
-name="Work Preference"
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
-
-<option>
-Remote or Hybrid Preference
-</option>
-
-<option>Remote</option>
-<option>Hybrid</option>
-<option>Flexible</option>
-
-</select>
-
-
-
-<input
-type="text"
-name="Years of Experience"
-placeholder="Years of Experience"
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
-
-
-
-<input
-type="date"
-name="Available Start Date"
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
-
-
-
-<textarea
-name="Experience"
-rows="6"
-placeholder="Tell us about your experience..."
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
-</textarea>
-
-
-
-<input
-type="url"
-name="LinkedIn Profile"
-placeholder="LinkedIn Profile (Optional)"
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
-
-
-
-<input
-type="url"
-name="Portfolio Website"
-placeholder="Portfolio or Website (Optional)"
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
-
-
-
-<label class="block text-white font-semibold">
-Resume/CV Upload
-</label>
-
-
-<input
-type="file"
-name="Resume"
-accept=".pdf,.doc,.docx"
-class="w-full text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700">
-
-
-
-<textarea
-name="Cover Letter"
-rows="5"
-placeholder="Cover Letter (Optional)"
-class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500">
-</textarea>
-
-
+<div>
+    <label class="block text-white font-semibold mb-2">Cover Letter</label>
+    <textarea
+    name="Cover Letter"
+    rows="5"
+    placeholder="Cover Letter (Optional)"
+    class="w-full p-4 rounded-xl bg-[#1F2937] text-white border border-gray-700 focus:outline-none focus:border-indigo-500"></textarea>
+</div>
 
 <button
 type="submit"
