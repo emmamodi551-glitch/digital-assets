@@ -1,426 +1,611 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survive. Heal. Rise. | 6-Month Community Series</title>  
-  :root {
-  --primary-navy: #0b1e36;
-  --accent-gold: #d4af37;
-  --bg-light: #f8f9fa;
-  --card-bg: #ffffff;
-  --text-dark: #222222;
-  --text-muted: #555555;
-  --border-color: #e2e8f0;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuel Enterprise | Property Services, Digital Solutions & Community Impact</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+        section {
+            scroll-margin-top: 90px;
+        }
 
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text-dark);
-  background-color: var(--bg-light);
-  line-height: 1.6;
-}
+        :root {
+            --bg-dark: #0a0e1a;
+            --card-bg: #111827;
+            --primary-violet: #5856d6;
+            --violet-hover: #4745c4;
+            --text-light: #ffffff;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+            --accent-glow: rgba(88, 86, 214, 0.25);
+            --radius: 14px;
+        }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* HERO SECTION */
-.hero {
-  background: linear-gradient(135deg, var(--primary-navy) 0%, #1a365d 100%);
-  color: #ffffff;
-  text-align: center;
-  padding: 60px 20px;
-}
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-light);
+            background-color: var(--bg-dark);
+            line-height: 1.6;
+        }
 
-.badge {
-  background-color: rgba(212, 175, 55, 0.2);
-  color: var(--accent-gold);
-  border: 1px solid var(--accent-gold);
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+        /* HEADER & NAVBAR */
+        header {
+            background-color: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin: 15px 0 5px;
-  letter-spacing: -1px;
-}
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
 
-.tagline {
-  font-size: 1.5rem;
-  font-style: italic;
-  color: var(--accent-gold);
-  margin-bottom: 10px;
-}
+        .logo {
+            color: #ffffff;
+            font-size: 1.35rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.02em;
+        }
 
-.sub-tagline {
-  font-size: 1rem;
-  opacity: 0.9;
-  margin-bottom: 25px;
-}
+        .logo span {
+            color: var(--primary-violet);
+        }
 
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
 
-.btn {
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 700;
-  display: inline-block;
-  transition: all 0.2s ease;
-}
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
 
-.btn-primary {
-  background-color: var(--accent-gold);
-  color: var(--primary-navy);
-}
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-light);
+        }
 
-.btn-primary:hover {
-  background-color: #c29f2e;
-}
+        .cta-btn {
+            background-color: var(--primary-violet);
+            color: #ffffff !important;
+            padding: 0.65rem 1.4rem;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
 
-.btn-outline {
-  border: 2px solid #ffffff;
-  color: #ffffff;
-}
+        .cta-btn:hover {
+            background-color: var(--violet-hover) !important;
+            transform: translateY(-1px);
+        }
 
-.btn-outline:hover {
-  background-color: #ffffff;
-  color: var(--primary-navy);
-}
+        /* HERO SECTION */
+        .hero {
+            padding: 7rem 2rem 5rem 2rem;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(88, 86, 214, 0.15) 0%, rgba(10, 14, 26, 1) 70%);
+        }
 
-/* SECTION TITLES */
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  color: var(--primary-navy);
-  margin: 50px 0 30px;
-}
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-/* TIMELINE GRID */
-.timeline-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
+        .hero-tag {
+            background: rgba(88, 86, 214, 0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(88, 86, 214, 0.3);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.8rem;
+        }
 
-.timeline-card {
-  background: var(--card-bg);
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
 
-.card-header {
-  color: #ffffff;
-  font-weight: 800;
-  padding: 10px 15px;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-}
+        .hero h1 span {
+            color: var(--primary-violet);
+            background: linear-gradient(135deg, #a5b4fc 0%, #5856d6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.month-1 { background-color: #1f3a60; }
-.month-2 { background-color: #d97706; }
-.month-3 { background-color: #16a34a; }
-.month-4 { background-color: #2563eb; }
-.month-5 { background-color: #7c3aed; }
-.month-6 { background-color: #881337; }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.card-body {
-  padding: 20px;
-}
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
 
-.card-body h3 {
-  font-size: 1.25rem;
-  color: var(--primary-navy);
-}
+        .btn-primary {
+            background-color: var(--primary-violet);
+            color: #ffffff;
+            padding: 0.9rem 2.2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
 
-.card-body .theme {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
+        .btn-primary:hover {
+            background-color: var(--violet-hover);
+            transform: translateY(-2px);
+        }
 
-.card-body p {
-  font-size: 0.95rem;
-  color: var(--text-dark);
-  margin-bottom: 15px;
-}
+        .btn-secondary {
+            background-color: #161e2e;
+            color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 0.9rem 2.2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-.scripture {
-  font-size: 0.85rem;
-  padding-top: 10px;
-  border-top: 1px dashed var(--border-color);
-  color: var(--text-muted);
-}
+        .btn-secondary:hover {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
 
-/* MONTHLY STRUCTURE */
-.structure-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-}
+        /* SECTION LAYOUT */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.structure-box {
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 4px solid var(--accent-gold);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-}
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem auto;
+        }
 
-.structure-box .time {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--accent-gold);
-}
+        .section-header h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.02em;
+        }
 
-.structure-box h4 {
-  color: var(--primary-navy);
-  margin: 5px 0;
-}
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
 
-/* REGISTER & FLYER */
-.register-section, .flyer-section {
-  margin: 50px 0;
-}
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
 
-.register-card {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  text-align: center;
-}
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
-.form-container {
-  margin-top: 20px;
-}
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(88, 86, 214, 0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
-.flyer-wrapper {
-  text-align: center;
-}
+        .card-icon {
+            width: 55px;
+            height: 55px;
+            background-color: rgba(88, 86, 214, 0.15);
+            color: #a5b4fc;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
 
-.flyer-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-/* FOOTER */
-footer {
-  background-color: var(--primary-navy);
-  color: #ffffff;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 60px;
-}
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
 
-footer a {
-  color: var(--accent-gold);
-  text-decoration: none;
-}
+        .card-list {
+            list-style: none;
+            margin-bottom: 1.8rem;
+        }
 
-.quote {
-  margin-top: 10px;
-  opacity: 0.8;
-  font-size: 0.9rem;
-}
+        .card-list li {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+        .card-list li i {
+            color: var(--primary-violet);
+            font-size: 0.85rem;
+        }
+
+        /* COMMUNITY SECTION (FEATURED) */
+        .community-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .community-banner-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 850px) {
+            .community-banner-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .badge-series {
+            background-color: rgba(88, 86, 214, 0.2);
+            color: #a5b4fc;
+            border: 1px solid rgba(88, 86, 214, 0.4);
+            padding: 0.35rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.2rem;
+        }
+
+        /* TIMELINE MARCH TO AUGUST (6 MONTHS) */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .timeline-item {
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid var(--primary-violet);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            background: rgba(88, 86, 214, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .timeline-item h4 {
+            color: #a5b4fc;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        .timeline-item h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0.3rem 0;
+        }
+
+        .timeline-item p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* ABOUT / FOUNDER SECTION */
+        .founder-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 3rem;
+        }
+
+        @media (max-width: 850px) {
+            .founder-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .founder-avatar {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(88, 86, 214, 0.2) 0%, #111827 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .founder-avatar i {
+            font-size: 3.8rem;
+            color: var(--primary-violet);
+            margin-bottom: 1rem;
+        }
+
+        .founder-info h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-role {
+            color: #a5b4fc;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .founder-info p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        /* CONTACT SECTION */
+        .contact-box {
+            background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            font-size: 1.1rem;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .contact-item i {
+            color: var(--primary-violet);
+            font-size: 1.3rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #050811;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="container">
-      <span class="badge">A 6-Month Community Series</span>
-      <h1>SURVIVE. HEAL. RISE.</h1>
-      <p class="tagline">Your Story Has Purpose.</p>
-      <p class="sub-tagline">From Trauma to Triumph. From Silence to Purpose.</p>
-      <div class="hero-buttons">
-        <a href="#register" class="btn btn-primary">Register Free</a>
-        <a href="#flyer" class="btn btn-outline">View Flyer</a>
-      </div>
-    </div>
-  </header>
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-layer-group" style="color: var(--primary-violet);"></i> NUEL <span>DIGITAL</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#community">Community Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" class="cta-btn">Book Strategy Session</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main class="container">
-    
-    <!-- PROGRAM TIMELINE SECTION -->
-    <section class="timeline-section">
-      <h2 class="section-title">Program Timeline (March to August)</h2>
-      
-      <div class="timeline-grid">
-        <!-- March -->
-        <div class="timeline-card">
-          <div class="card-header month-1">MARCH</div>
-          <div class="card-body">
-            <h3>Reclaiming Your Story</h3>
-            <span class="theme">Identity & Overcoming Stigma</span>
-            <p>Breaking the silence of trauma and mental health battles. Discovering that a diagnosis or past failure does not define your future.</p>
-            <div class="scripture">
-              <strong>Scripture Anchor:</strong> Jeremiah 29:11
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">House of Brands • Central Minnesota</span>
+            <h1>We Build and Manage Your Entire <span>Digital Ecosystem</span></h1>
+            <p>A Premium House of Brands System for Businesses and Creators. Combining professional property care, digital scale, and community leadership through <strong>Nuel Property Services</strong> and <strong>Nuel Digital</strong>.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">Explore Plans</a>
+                <a href="#contact" class="btn-secondary">Book Strategy Session</a>
             </div>
-          </div>
         </div>
-
-        <!-- April -->
-        <div class="timeline-card">
-          <div class="card-header month-2">APRIL</div>
-          <div class="card-body">
-            <h3>Resilience Through the Seasons</h3>
-            <span class="theme">Faith in Hardship</span>
-            <p>How to keep your spiritual and emotional anchor steady when external circumstances, health, or environments shift drastically.</p>
-            <div class="scripture">
-              <strong>Scripture Anchor:</strong> Isaiah 58:11
-            </div>
-          </div>
-        </div>
-
-        <!-- Month 3 -->
-        <div class="timeline-card">
-          <div class="card-header month-3">MONTH 3</div>
-          <div class="card-body">
-            <h3>The Power of Creative Renewal</h3>
-            <span class="theme">Art, Music & Outlets</span>
-            <p>Harnessing visual art, song creation, and quiet writing as divine tools for processing deep trauma and finding internal balance.</p>
-            <div class="scripture">
-              <strong>Scripture Anchor:</strong> Psalm 40:3
-            </div>
-          </div>
-        </div>
-
-        <!-- Month 4 -->
-        <div class="timeline-card">
-          <div class="card-header month-4">MONTH 4</div>
-          <div class="card-body">
-            <h3>Discipline & Personal Comebacks</h3>
-            <span class="theme">Health, Habits & Ownership</span>
-            <p>Replacing bad habits step-by-step, taking radical personal responsibility, and building physical and spiritual endurance.</p>
-            <div class="scripture">
-              <strong>Scripture Anchor:</strong> 2 Timothy 1:7
-            </div>
-          </div>
-        </div>
-
-        <!-- Month 5 -->
-        <div class="timeline-card">
-          <div class="card-header month-5">MONTH 5</div>
-          <div class="card-body">
-            <h3>Digital Wisdom & Healthy Boundaries</h3>
-            <span class="theme">Guarding Your Mind</span>
-            <p>Setting healthy online boundaries, avoiding public reactions during crisis, and choosing quiet, offline healing.</p>
-            <div class="scripture">
-              <strong>Scripture Anchor:</strong> Proverbs 4:23
-            </div>
-          </div>
-        </div>
-
-        <!-- August -->
-        <div class="timeline-card">
-          <div class="card-header month-6">AUGUST</div>
-          <div class="card-body">
-            <h3>Graduation & Community Commissioning</h3>
-            <span class="theme">Advocacy & Mentorship</span>
-            <p>Commemorate your healing journey. Formally receive a diploma or certificate—a final communal commissioning sending you forth as an ambassador of healing.</p>
-            <div class="scripture">
-              <strong>Scripture Anchor:</strong> Matthew 28:19-20
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- MONTHLY STRUCTURE -->
-    <section class="structure-section">
-      <h2 class="section-title">What to Expect Each Month</h2>
-      <div class="structure-grid">
-        <div class="structure-box">
-          <div class="time">15 MINS</div>
-          <h4>Welcome & Fellowship</h4>
-          <p>Refreshments, music, and casual connection.</p>
+    <!-- SERVICES SECTION -->
+    <section class="section" id="services">
+        <div class="section-header">
+            <h2>Our Core Brands</h2>
+            <p>Delivering high-performance physical property care and digital infrastructure under one unified ecosystem.</p>
         </div>
-        <div class="structure-box">
-          <div class="time">25 MINS</div>
-          <h4>Keynote & Scripture</h4>
-          <p>Teaching on the monthly theme drawing from <em>Sudan Fire USA Ice</em>.</p>
+
+        <div class="services-grid">
+            <!-- Nuel Property Services -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-broom"></i>
+                </div>
+                <h3>Nuel Property Services</h3>
+                <p>Comprehensive property maintenance, commercial cleaning, and site restoration solutions tailored for residential and commercial venues across St. Cloud, Sartell, Sauk Rapids, and Waite Park.</p>
+                <ul class="card-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Commercial & Office Cleaning</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Post-Construction Cleanups</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Floor Care & Site Maintenance</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Tiered Plans (Bronze, Silver, Gold)</li>
+                </ul>
+                <a href="#contact" class="btn-secondary" style="text-align: center;">Request Quote</a>
+            </div>
+
+            <!-- Nuel Digital -->
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-cubes"></i>
+                </div>
+                <h3>Nuel Digital</h3>
+                <p>Digital infrastructure, web monetization, brand architecture, and custom publishing workflows designed to build and scale modern digital assets.</p>
+                <ul class="card-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Digital Ecosystem Building</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Custom Web Development & Hosting</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Media & Brand Strategy</li>
+                    <li><i class="fa-solid fa-circle-check"></i> E-Commerce & Publishing Systems</li>
+                </ul>
+                <a href="#contact" class="btn-secondary" style="text-align: center;">Consult Digital Team</a>
+            </div>
         </div>
-        <div class="structure-box">
-          <div class="time">30 MINS</div>
-          <h4>Guided Table Discussions</h4>
-          <p>Small-group reflection, journaling, and safe-space sharing.</p>
-        </div>
-        <div class="structure-box">
-          <div class="time">10 MINS</div>
-          <h4>Call to Action & Prayer</h4>
-          <p>An encouraging challenge and closing prayer for the month ahead.</p>
-        </div>
-      </div>
     </section>
 
-    <!-- REGISTRATION & FORM SECTION -->
-    <section id="register" class="register-section">
-      <div class="register-card">
-        <h2>Register Today</h2>
-        <p>Admission is <strong>FREE & Open to the Public</strong>. Journaling materials and light refreshments are provided.</p>
-        <p><strong>Location:</strong> Downtown St. Cloud, MN (Paramount Center for the Arts & Local Community Churches)</p>
-        
-        <!-- Replace the iframe src below with your actual Google Form embed URL -->
-        <div class="form-container">
-          <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading registration form…</iframe>
+    <!-- COMMUNITY WORK SECTION -->
+    <section class="section" id="community" style="padding-top: 2rem;">
+        <div class="section-header">
+            <h2>Community Work & Outreach</h2>
+            <p>Building stronger local foundations through faith, youth mentorship, mental health recovery, and dedicated local advocacy.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- FLYER PREVIEW SECTION -->
-    <section id="flyer" class="flyer-section">
-      <h2 class="section-title">Official Program Flyer</h2>
-      <div class="flyer-wrapper">
-        <img src="images/survive-heal-rise-flyer.png" alt="Survive Heal Rise Official Flyer" class="flyer-img">
-        <br>
-        <a href="images/survive-heal-rise-flyer.png" download class="btn btn-primary">Download High-Res Flyer</a>
-      </div>
-    </section>
+        <!-- Featured Community Series Banner -->
+        <div class="community-banner">
+            <div class="community-banner-grid">
+                <div>
+                    <span class="badge-series">Featured 6-Month Series</span>
+                    <h3 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 0.4rem;">SURVIVE. HEAL. RISE.</h3>
+                    <p style="color: #a5b4fc; font-size: 1.05rem; font-weight: 600;">Your Story Has Purpose • Program Timeline: March to August</p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-muted);">
+                        A recurring 6-month community series and devotional workshop held in Downtown St. Cloud. Drawing from the memoir <strong>"Sudan Fire USA ICE"</strong>, this series equips individuals, youth, and families with tools for mental health recovery, spiritual endurance, and leadership.
+                    </p>
+                </div>
+                <div style="text-align: center; background: rgba(0,0,0,0.3); padding: 1.8rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                    <i class="fa-solid fa-calendar-days" style="font-size: 2.5rem; color: var(--primary-violet); margin-bottom: 0.5rem;"></i>
+                    <p style="font-weight: 800; font-size: 1.2rem;">March – August</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Downtown St. Cloud, MN</p>
+                    <p style="font-size: 0.85rem; color: #a5b4fc; margin-top: 0.6rem; font-weight: 700;">Admission: FREE & Open to All</p>
+                </div>
+            </div>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p><strong>Nuel Property Services & Ministry Outreach</strong></p>
-      <p>Contact: <a href="mailto: nueldigitalassets@gmail.com">nueldigitalassets@gmail.com</a></p>
-      <p class="quote"><em>"Survival is not the finish line—becoming a voice for others is."</em></p>
-    </div>
-  </footer>
-
-</body>
-  </html>
+            <!-- TIMELINE MARCH TO AUGUST (6 MONTHS) -->
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <h4>March</h4>
+                    <h5>Reclaiming Your Story</h5>
+                    <p>Identity & Overcoming Stigma</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>April</h4>
+                    <h5>Resilience in Seasons</h5>
+                    <p>Faith in Hardship & Transition</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>May</h4>
+                    <h5>Creative Renewal</h5>
+                    <p>Art, Music & Outlets</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>June</h4>
+                    <h5>Discipline & Comebacks</h5>
+                    <p>Health, Habits & Ownership</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>July</h4>
+                    <h5>Digital
 
