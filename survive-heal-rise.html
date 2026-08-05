@@ -3,7 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survive. Heal. Rise. | 6-Month Community Series</title>
+  <title>Survive. Heal. Rise. | 6-Month Community Series</title>  
+  :root {
+  --primary-navy: #0b1e36;
+  --accent-gold: #d4af37;
+  --bg-light: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-dark: #222222;
+  --text-muted: #555555;
+  --border-color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #1a365d 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.badge {
+  background-color: rgba(212, 175, 55, 0.2);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 15px 0 5px;
+  letter-spacing: -1px;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--accent-gold);
+  margin-bottom: 10px;
+}
+
+.sub-tagline {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+}
+
+.btn-primary:hover {
+  background-color: #c29f2e;
+}
+
+.btn-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: var(--primary-navy);
+}
+
+/* SECTION TITLES */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-navy);
+  margin: 50px 0 30px;
+}
+
+/* TIMELINE GRID */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.timeline-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card-header {
+  color: #ffffff;
+  font-weight: 800;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.month-1 { background-color: #1f3a60; }
+.month-2 { background-color: #d97706; }
+.month-3 { background-color: #16a34a; }
+.month-4 { background-color: #2563eb; }
+.month-5 { background-color: #7c3aed; }
+.month-6 { background-color: #881337; }
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  font-size: 1.25rem;
+  color: var(--primary-navy);
+}
+
+.card-body .theme {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.scripture {
+  font-size: 0.85rem;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-color);
+  color: var(--text-muted);
+}
+
+/* MONTHLY STRUCTURE */
+.structure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.structure-box {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-gold);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.structure-box .time {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+}
+
+.structure-box h4 {
+  color: var(--primary-navy);
+  margin: 5px 0;
+}
+
+/* REGISTER & FLYER */
+.register-section, .flyer-section {
+  margin: 50px 0;
+}
+
+.register-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.flyer-wrapper {
+  text-align: center;
+}
+
+.flyer-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+footer a {
+  color: var(--accent-gold);
+  text-decoration: none;
+}
+
+.quote {
+  margin-top: 10px;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
