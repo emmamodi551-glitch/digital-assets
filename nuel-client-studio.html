@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuel Digital — Client Flyer & Print Studio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0B0F19;
+      color: #F3F4F6;
+      line-height: 1.45;
+      padding-bottom: 40px;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #111827;
+      border-bottom: 1px solid #1F2937;
+      padding: 12px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .brand-row { display: flex; align-items: center; gap: 10px; }
+    .logo-box {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: #4F46E5; color: #fff; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; font-size: 14px;
+    }
+    .brand-title { font-size: 14px; font-weight: 800; color: #fff; }
+    .brand-sub { font-size: 10px; font-weight: 700; color: #818CF8; text-transform: uppercase; letter-spacing: 0.06em; }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 6px; }
+    button {
+      border: 1px solid #1F2937;
+      background: #1F2937;
+      color: #E5E7EB;
+      padding: 7px 11px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:active { transform: scale(0.98); }
+    button.active { background: #4F46E5; border-color: #4F46E5; color: #fff; }
+    button.green { background: #059669; border-color: #059669; color: #fff; }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 900px) {
+      .container { grid-template-columns: 5fr 7fr; }
+    }
+    .panel {
+      background: #111827;
+      border: 1px solid #1F2937;
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .section { border-top: 1px solid #1F2937; padding-top: 14px; margin-top: 14px; }
+    .section:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .label-cap {
+      display: block; font-size: 11px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: #9CA3AF; margin-bottom: 8px;
+    }
+    .preset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .preset-btn {
+      background: #0B0F19; border: 1px solid #1F2937; color: #fff;
+      text-align: left; padding: 9px 10px; border-radius: 10px; font-size: 12px;
+    }
+    .field { margin-bottom: 10px; }
+    .field label { display: block; font-size: 12px; font-weight: 600; color: #D1D5DB; margin-bottom: 4px; }
+    input[type="text"], textarea {
+      width: 100%; background: #0B0F19; border: 1px solid #1F2937;
+      color: #fff; padding: 9px 11px; border-radius: 10px; font-size: 13px;
+      font-family: inherit;
+    }
+    input[type="text"]:focus, textarea:focus { outline: none; border-color: #6366F1; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .swatches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .swatch {
+      width: 28px; height: 28px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.25);
+      padding: 0;
+    }
+    .item-card-edit {
+      background: #0B0F19; border: 1px solid #1F2937; border-radius: 10px;
+      padding: 10px; margin-bottom: 8px;
+    }
+    .item-card-top {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 6px; font-size: 11px; color: #9CA3AF; font-weight: 700;
+    }
+    .remove-btn {
+      background: transparent; border: none; color: #F87171; padding: 2px 6px; font-size: 11px;
+    }
+    .status-pill {
+      font-size: 11px; color: #34D399; font-weight: 700; margin-top: 6px;
+    }
+
+    /* Flyer Canvas */
+    .flyer-wrap { display: flex; flex-direction: column; align-items: center; }
+    .meta-bar {
+      width: 100%; max-width: 540px; display: flex; justify-content: space-between;
+      font-size: 12px; color: #9CA3AF; margin-bottom: 10px;
+    }
+    .flyer {
+      width: 100%; max-width: 540px; min-height: 660px;
+      background: #0B0F19; color: #FFFFFF;
+      border: 1px solid #1F2937; border-radius: 18px;
+      padding: 24px; display: flex; flex-direction: column; justify-content: space-between;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    }
+    .flyer.light {
+      background: #FFFFFF; color: #111827; border-color: #D1D5DB;
+    }
+    .flyer.print-size { min-height: 740px; }
+    .f-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding-bottom: 16px; border-bottom: 1px solid rgba(156,163,175,0.25);
+    }
+    .f-brand { display: flex; align-items: center; gap: 10px; }
+    .f-badge {
+      width: 42px; height: 42px; border-radius: 10px; color: #fff;
+      font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .f-name { font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; }
+    .f-tag { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+    .f-cta {
+      padding: 8px 13px; border-radius: 10px; color: #fff; font-size: 12px; font-weight: 700; flex-shrink: 0;
+    }
+    .f-hero { margin-top: 20px; }
+    .f-title { font-size: 24px; font-weight: 800; line-height: 1.2; }
+    .f-desc { font-size: 13px; opacity: 0.8; margin-top: 8px; }
+    .f-promo {
+      display: inline-block; margin-top: 12px; padding: 8px 12px;
+      border-radius: 10px; font-size: 12px; font-weight: 800; border: 1px solid;
+    }
+    .f-grid {
+      margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+    @media (max-width: 480px) {
+      .f-grid { grid-template-columns: 1fr; }
+    }
+    .f-card {
+      background: #111827; border: 1px solid #1F2937; border-radius: 12px; padding: 12px;
+    }
+    .flyer.light .f-card {
+      background: #F9FAFB; border-color: #E5E7EB;
+    }
+    .f-card-title { font-size: 13px; font-weight: 700; }
+    .f-card-detail { font-size: 11px; opacity: 0.78; margin-top: 4px; }
+    .f-foot {
+      margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(156,163,175,0.25);
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 12px;
+    }
+    .f-url { font-size: 14px; font-weight: 800; word-break: break-all; }
+    .f-phone { font-size: 14px; font-weight: 700; margin-top: 3px; }
+    .f-addr { font-size: 12px; opacity: 0.78; margin-top: 2px; }
+    .f-credit { font-size: 10px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }
+    .qr-box {
+      background: #fff; padding: 6px; border-radius: 10px; border: 1px solid #D1D5DB; flex-shrink: 0;
+    }
+    .qr-box img { width: 72px; height: 72px; display: block; }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #fff !important; padding: 0 !important; }
+      .container { display: block !important; padding: 0 !important; }
+      .flyer { max-width: 100% !important; box-shadow: none !important; border: none !important; border-radius: 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar no-print">
+    <div class="brand-row">
+      <div class="logo-box">ND</div>
+      <div>
+        <div class="brand-title">CLIENT FLYER &amp; PRINT STUDIO</div>
+        <div class="brand-sub">White-Label Production Engine</div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button type="button" id="btnSocial" class="active">4:5 Social</button>
+      <button type="button" id="btnPrint">8.5×11" Print</button>
+      <button type="button" id="btnTheme">Light Print Mode</button>
+      <button type="button" id="btnPdf" class="green">Print / PDF</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel no-print">
+      <div class="section">
+        <span class="label-cap">Load Starter Template</span>
+        <div class="preset-grid">
+          <button type="button" class="preset-btn" data-tpl="blank">+ Blank Client Flyer</button>
+          <button type="button" class="preset-btn" data-tpl="local">Local Business Promo</button>
+          <button type="button" class="preset-btn" data-tpl="property">Nuel Property Services</button>
+          <button type="button" class="preset-btn" data-tpl="event">Workshop / Event Flyer</button>
+        </div>
+        <div id="studioStatus" class="status-pill">Ready • Tap any template or edit fields below</div>
+      </div>
+
+      <div class="section">
+        <span class="label-cap">1. Client Brand Identity</span>
+        <div class="row-2">
+          <div class="field">
+            <label for="inName">Client Business Name</label>
+            <input id="inName" type="text" value="GRANITE CITY ROASTERS" />
+          </div>
+          <div class="field">
+            <label for="inInit">Badge (Max 4)</label>
+            <input id="inInit" type="text" maxlength="4" value="GCR" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="inTag">Client Tagline / Location</label>
+          <input id="inTag" type="text" value="SMALL-BATCH COFFEE & BAKERY • ST. CLOUD, MN" />
+        </div>
+        <div class="field">
+          <label>Client Accent Color</label>
+          <div class="swatches">
+            <button type="button" class="swatch" data-color="#4F46E5" style="background:#4F46E5"></button>
+            <button type="button" class="swatch" data-color="#DC2626" style="background:#DC2626"></button>
+            <button type="button" class="swatch" data-color="#D97706" style="background:#D97706"></button>
+            <button type="button" class="swatch" data-color="#059669" style="background:#059669"></button>
+            <button type="button" class="swatch" data-color="#0284C7" style="background:#0284C7"></button>
+            <button type="button" class="swatch" data-color="#7C3AED" style="background:#7C3AED"></button>
+            <input id="inColor" type="color" value="#D97706" />
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="label-cap">2. Headline &amp; Offer</span>
+        <div class="field">
+          <label for="inTitle">Main Headline</label>
+          <input id="inTitle" type="text" value="Fresh Morning Brews & Warm Pastries Daily" />
+        </div>
+        <div class="field">
+          <label for="inDesc">Description</label>
+          <textarea id="inDesc" rows="2">Locally roasted espresso, scratch-made croissants, and fast morning pickup before work.</textarea>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <label for="inPromo">Promo Box (Optional)</label>
+            <input id="inPromo" type="text" value="20% OFF First Order — Show Flyer" />
+          </div>
+          <div class="field">
+            <label for="inCta">Button Label</label>
+            <input id="inCta" type="text" value="Order Online" />
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span class="label-cap" style="margin:0;">3. Client Items / Services</span>
+          <button type="button" id="btnAddItem" class="active">+ Add Item</button>
+        </div>
+        <div id="itemsEditor"></div>
+      </div>
+
+      <div class="section">
+        <span class="label-cap">4. Client Contact &amp; QR Link</span>
+        <div class="field">
+          <label for="inUrl">Website or Booking Link</label>
+          <input id="inUrl" type="text" value="www.exampleclient.com" />
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <label for="inPhone">Phone</label>
+            <input id="inPhone" type="text" value="320-555-0194" />
+          </div>
+          <div class="field">
+            <label for="inAddr">Hours / Address</label>
+            <input id="inAddr" type="text" value="Downtown St. Cloud • 6 AM – 4 PM" />
+          </div>
+        </div>
+        <label style="font-size:12px; display:flex; align-items:center; gap:6px; cursor:pointer;">
+          <input id="inCredit" type="checkbox" /> Include "Designed by Nuel Digital" footer
+        </label>
+      </div>
+    </section>
+
+    <section class="flyer-wrap">
+      <div class="meta-bar no-print">
+        <span id="metaText">4:5 Social Flyer • Live Preview</span>
+        <button type="button" id="btnCopy">Copy Text</button>
+      </div>
+
+      <article id="flyerSheet" class="flyer">
+        <div>
+          <div class="f-head">
+            <div class="f-brand">
+              <div id="outBadge" class="f-badge" style="background:#D97706;">GCR</div>
+              <div>
+                <div id="outName" class="f-name">GRANITE CITY ROASTERS</div>
+                <div id="outTag" class="f-tag" style="color:#D97706;">SMALL-BATCH COFFEE &amp; BAKERY • ST. CLOUD, MN</div>
+              </div>
+            </div>
+            <div id="outCta" class="f-cta" style="background:#D97706;">Order Online</div>
+          </div>
+
+          <div class="f-hero">
+            <h2 id="outTitle" class="f-title">Fresh Morning Brews &amp; Warm Pastries Daily</h2>
+            <p id="outDesc" class="f-desc">Locally roasted espresso, scratch-made croissants, and fast morning pickup before work.</p>
+            <div id="outPromo" class="f-promo">20% OFF First Order — Show Flyer</div>
+          </div>
+
+          <div id="outGrid" class="f-grid"></div>
+        </div>
+
+        <div class="f-foot">
+          <div>
+            <div id="outUrl" class="f-url" style="color:#D97706;">www.exampleclient.com</div>
+            <div id="outPhone" class="f-phone">320-555-0194</div>
+            <div id="outAddr" class="f-addr">Downtown St. Cloud • 6 AM – 4 PM</div>
+            <div id="outCredit" class="f-credit" style="display:none;">Designed by Nuel Digital • digital.nuelpropertyservices.com</div>
+          </div>
+          <div class="qr-box">
+            <img id="outQr" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://www.exampleclient.com" alt="QR" />
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var items = [
+        { title: 'Signature House Roast', detail: 'Hot or iced single-origin coffee brewed fresh every hour.' },
+        { title: 'Warm Bakery Box', detail: 'Butter croissants, cinnamon rolls, and muffins baked at 5 AM.' },
+        { title: 'Express Mobile Pickup', detail: 'Scan the QR code to order ahead and skip the morning line.' },
+        { title: 'Office & Event Catering', detail: '96 oz coffee travelers and pastry platters for local teams.' }
+      ];
+      var format = 'social';
+      var light = false;
+
+      function $(id) { return document.getElementById(id); }
+
+      function renderEditors() {
+        var box = $('itemsEditor');
+        box.innerHTML = '';
+        items.forEach(function (item, idx) {
+          var wrap = document.createElement('div');
+          wrap.className = 'item-card-edit';
+
+          var top = document.createElement('div');
+          top.className = 'item-card-top';
+          top.innerHTML = '<span>ITEM ' + (idx + 1) + '</span>';
+
+          var rem = document.createElement('button');
+          rem.type = 'button';
+          rem.className = 'remove-btn';
+          rem.textContent = 'Remove';
+          rem.addEventListener('click', function () {
+            items.splice(idx, 1);
+            renderEditors();
+            renderFlyer();
+          });
+          top.appendChild(rem);
+
+          var tIn = document.createElement('input');
+          tIn.type = 'text';
+          tIn.value = item.title;
+          tIn.style.marginBottom = '6px';
+          tIn.addEventListener('input', function () {
+            items[idx].title = tIn.value;
+            renderFlyer();
+          });
+
+          var dIn = document.createElement('input');
+          dIn.type = 'text';
+          dIn.value = item.detail;
+          dIn.addEventListener('input', function () {
+            items[idx].detail = dIn.value;
+            renderFlyer();
+          });
+
+          wrap.appendChild(top);
+          wrap.appendChild(tIn);
+          wrap.appendChild(dIn);
+          box.appendChild(wrap);
+        });
+      }
+
+      function renderFlyer() {
+        var name = $('inName').value || 'CLIENT NAME';
+        var init = $('inInit').value || 'ND';
+        var tag = $('inTag').value;
+        var color = $('inColor').value || '#4F46E5';
+        var title = $('inTitle').value;
+        var desc = $('inDesc').value;
+        var promo = $('inPromo').value.trim();
+        var cta = $('inCta').value || 'Learn More';
+        var url = $('inUrl').value.trim() || 'www.example.com';
+        var phone = $('inPhone').value.trim();
+        var addr = $('inAddr').value.trim();
+        var credit = $('inCredit').checked;
+
+        $('outName').textContent = name;
+        $('outBadge').textContent = init;
+        $('outBadge').style.background = color;
+        $('outTag').textContent = tag;
+        $('outTag').style.color = color;
+        $('outCta').textContent = cta;
+        $('outCta').style.background = color;
+        $('outTitle').textContent = title;
+        $('outDesc').textContent = desc;
+
+        var promoEl = $('outPromo');
+        if (promo) {
+          promoEl.style.display = 'inline-block';
+          promoEl.textContent = promo;
+          promoEl.style.borderColor = color;
+          promoEl.style.color = light ? color : '#FFFFFF';
+          promoEl.style.background = light ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.08)';
+        } else {
+          promoEl.style.display = 'none';
+        }
+
+        $('outUrl').textContent = url;
+        $('outUrl').style.color = color;
+        $('outPhone').textContent = phone;
+        $('outAddr').textContent = addr;
+        $('outCredit').style.display = credit ? 'block' : 'none';
+
+        var fullUrl = url.indexOf('http') === 0 ? url : 'https://' + url;
+        $('outQr').src = 'https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=' + encodeURIComponent(fullUrl);
+
+        var grid = $('outGrid');
+        grid.innerHTML = '';
+        items.forEach(function (item) {
+          var card = document.createElement('div');
+          card.className = 'f-card';
+          card.style.borderLeft = '3px solid ' + color;
+
+          var ct = document.createElement('div');
+          ct.className = 'f-card-title';
+          ct.textContent = item.title;
+
+          var cd = document.createElement('div');
+          cd.className = 'f-card-detail';
+          cd.textContent = item.detail;
+
+          card.appendChild(ct);
+          card.appendChild(cd);
+          grid.appendChild(card);
+        });
+
+        var sheet = $('flyerSheet');
+        sheet.className = 'flyer' + (light ? ' light' : '') + (format === 'print' ? ' print-size' : '');
+        $('metaText').textContent = (format === 'print' ? '8.5×11" Print' : '4:5 Social Flyer') + ' • ' + name;
+      }
+
+      function applyTemplate(tpl) {
+        if (tpl === 'blank') {
+          $('inName').value = 'YOUR CLIENT BUSINESS';
+          $('inInit').value = 'LOGO';
+          $('inTag').value = 'TAGLINE • CITY, STATE';
+          $('inTitle').value = 'Client Headline Goes Here';
+          $('inDesc').value = 'Describe the client offer, menu, or service in two short sentences.';
+          $('inPromo').value = 'SPECIAL CLIENT OFFER';
+          $('inCta').value = 'Get Started';
+          $('inUrl').value = 'www.clientwebsite.com';
+          $('inPhone').value = '320-000-0000';
+          $('inAddr').value = 'Address or Hours';
+          $('inColor').value = '#4F46E5';
+          items = [
+            { title: 'Service / Offer 1', detail: 'Short details or starting price.' },
+            { title: 'Service / Offer 2', detail: 'Short details or starting price.' }
+          ];
+        } else if (tpl === 'local') {
+          $('inName').value = 'GRANITE CITY ROASTERS';
+          $('inInit').value = 'GCR';
+          $('inTag').value = 'SMALL-BATCH COFFEE & BAKERY • ST. CLOUD, MN';
+          $('inTitle').value = 'Fresh Morning Brews & Warm Pastries Daily';
+          $('inDesc').value = 'Locally roasted espresso, scratch-made croissants, and fast morning pickup before work.';
+          $('inPromo').value = '20% OFF First Order — Show Flyer';
+          $('inCta').value = 'Order Online';
+          $('inUrl').value = 'www.exampleclient.com';
+          $('inPhone').value = '320-555-0194';
+          $('inAddr').value = 'Downtown St. Cloud • 6 AM – 4 PM';
+          $('inColor').value = '#D97706';
+          items = [
+            { title: 'Signature House Roast', detail: 'Hot or iced single-origin coffee brewed fresh every hour.' },
+            { title: 'Warm Bakery Box', detail: 'Butter croissants, cinnamon rolls, and muffins baked at 5 AM.' },
+            { title: 'Express Mobile Pickup', detail: 'Scan the QR code to order ahead and skip the morning line.' },
+            { title: 'Office & Event Catering', detail: '96 oz coffee travelers and pastry platters for local teams.' }
+          ];
+        } else if (tpl === 'property') {
+          $('inName').value = 'NUEL PROPERTY SERVICES';
+          $('inInit').value = 'NPS';
+          $('inTag').value = 'ZERO CROSS-CONTAMINATION CLEANING • ST. CLOUD, MN';
+          $('inTitle').value = 'Spotless Homes & Offices Using Your Own Supplies';
+          $('inDesc').value = 'Reliable residential and light commercial cleaning designed for hygiene, trust, and peace of mind.';
+          $('inPromo').value = '15% Proceeds Reinvested Into Local Community';
+          $('inCta').value = 'Book Walkthrough';
+          $('inUrl').value = 'www.nuelpropertyservices.com';
+          $('inPhone').value = '320-217-3955';
+          $('inAddr').value = 'Serving St. Cloud, Waite Park & Sartell';
+          $('inColor').value = '#059669';
+          items = [
+            { title: 'Zero Cross-Contamination', detail: 'We clean strictly with your household tools and preferred products.' },
+            { title: 'Standard & Deep Cleans', detail: 'Kitchens, baths, floors, and high-touch surface sanitization.' },
+            { title: 'Move-In / Move-Out Prep', detail: 'Detailed apartment and home turnover cleaning.' },
+            { title: 'Flexible Scheduling', detail: 'One-time, biweekly, or monthly recurring service slots.' }
+          ];
+        } else if (tpl === 'event') {
+          $('inName').value = 'SURVIVE. HEAL. RISE.';
+          $('inInit').value = 'SHR';
+          $('inTag').value = 'COMMUNITY STORYTELLING & EMPOWERMENT SERIES';
+          $('inTitle').value = 'Turn Your Lived Experience Into Strength & Voice';
+          $('inDesc').value = 'A guided six-month community storytelling and resilience workshop series in Central Minnesota.';
+          $('inPromo').value = 'May – October Series • Free Community Registration';
+          $('inCta').value = 'Reserve Seat';
+          $('inUrl').value = 'ministry.nuelpropertyservices.com';
+          $('inPhone').value = '320-217-3955';
+          $('inAddr').value = 'St. Cloud, MN • Supported by CMAB Grant';
+          $('inColor').value = '#DC2626';
+          items = [
+            { title: 'Guided Storytelling', detail: 'Structured prompts to write and share personal turning points.' },
+            { title: 'Resilience & Mindset', detail: 'Practical daily habits for clarity, discipline, and forward momentum.' },
+            { title: 'Safe Community Circle', detail: 'Supportive peer dialogue built on respect and shared growth.' },
+            { title: 'Live Showcase Finale', detail: 'Optional spoken-word and reading celebration for participants.' }
+          ];
+        }
+        $('studioStatus').textContent = 'Loaded template: ' + $('inName').value;
+        renderEditors();
+        renderFlyer();
+      }
+
+      document.querySelectorAll('.preset-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyTemplate(btn.getAttribute('data-tpl'));
+        });
+      });
+
+      document.querySelectorAll('.swatch').forEach(function (sw) {
+        sw.addEventListener('click', function () {
+          $('inColor').value = sw.getAttribute('data-color');
+          renderFlyer();
+        });
+      });
+
+      ['inName', 'inInit', 'inTag', 'inColor', 'inTitle', 'inDesc', 'inPromo', 'inCta', 'inUrl', 'inPhone', 'inAddr'].forEach(function (id) {
+        $(id).addEventListener('input', renderFlyer);
+      });
+      $('inCredit').addEventListener('change', renderFlyer);
+
+      $('btnAddItem').addEventListener('click', function () {
+        items.push({ title: 'New Feature or Service', detail: 'Add brief details or pricing.' });
+        renderEditors();
+        renderFlyer();
+      });
+
+      $('btnSocial').addEventListener('click', function () {
+        format = 'social';
+        $('btnSocial').classList.add('active');
+        $('btnPrint').classList.remove('active');
+        renderFlyer();
+      });
+
+      $('btnPrint').addEventListener('click', function () {
+        format = 'print';
+        $('btnPrint').classList.add('active');
+        $('btnSocial').classList.remove('active');
+        renderFlyer();
+      });
+
+      $('btnTheme').addEventListener('click', function () {
+        light = !light;
+        $('btnTheme').textContent = light ? 'Dark Navy Mode' : 'Light Print Mode';
+        renderFlyer();
+      });
+
+      $('btnPdf').addEventListener('click', function () {
+        window.print();
+      });
+
+      $('btnCopy').addEventListener('click', function () {
+        var text = $('inName').value + '\n' + $('inTitle').value + '\n' + $('inDesc').value + '\n\n' +
+          items.map(function (i) { return '• ' + i.title + ': ' + i.detail; }).join('\n') +
+          '\n\n' + $('inUrl').value + ' | ' + $('inPhone').value;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text);
+          $('studioStatus').textContent = 'Copied flyer text to clipboard.';
+        }
+      });
+
+      renderEditors();
+      renderFlyer();
+    })();
+  </script>
+</body>
+</html>
